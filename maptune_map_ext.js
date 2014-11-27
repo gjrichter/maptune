@@ -150,6 +150,16 @@ ixmaps.jsapi = ixmaps.jsapi || {};
 			}
 		}
 
+		// --------------------------------------------
+		// add zoomto button
+		// --------------------------------------------
+		if ( 1 ){
+			var szStreet  = "<div style='float:right;margin-left:5px;margin-top:-5px;margin-right:-15px'>";
+				szStreet += ixmaps.jsapi.getZoomLink(info.geometry.coordinates[1]+","+info.geometry.coordinates[0]);
+				szStreet += "</div>";
+			szInfo += szStreet;
+		}
+
 		return szInfo;
 	};
 
@@ -164,6 +174,11 @@ ixmaps.jsapi = ixmaps.jsapi || {};
 	// ----------------------------------------------------------------
 	ixmaps.jsapi.getStreetLink = function(szDestination){
 		return ("<a href='javascript:ixmaps.jsapi.showStreeView("+szDestination+");' class='streetview-link-map' data-role='button' data-inline='true' data-theme='c' ></a>");
+	};
+	// create link to zoom to item
+	// ----------------------------------------------------------------
+	ixmaps.jsapi.getZoomLink = function(szDestination){
+		return ("<a href='javascript:ixmaps.jsapi.zoomTo("+szDestination+");' ><img src='resources/ui/zoomto.png' height='24' /></a>");
 	};
 	// use yahoo YQL webservice as proxy to get around origin problems
 	// ----------------------------------------------------------------
@@ -203,6 +218,10 @@ ixmaps.jsapi = ixmaps.jsapi || {};
 
 	ixmaps.jsapi.onGetIcon = function(icon,info,i) {
 
+		// enter user code here to change item icon
+		// --->
+
+		/*
 		if ( info.properties.data && info.properties.data.CIRCCM ){	
 
 			switch(info.properties.name){
@@ -238,8 +257,6 @@ ixmaps.jsapi = ixmaps.jsapi || {};
 					icon.image = "resources/icons/default/default_dark_green.png";
 					break;
 			}
-
-
 			var nSize = info.properties.data.CIRCCM/100;
 			nSize = Math.max(0.5,Math.min(1.2,nSize));
 			icon.iconSize = new GSize(32*nSize, 32*nSize);
@@ -247,34 +264,8 @@ ixmaps.jsapi = ixmaps.jsapi || {};
 			icon.infoWindowAnchor = new GPoint(15*nSize, 6*nSize);
 			return icon;
 		}
+		**/
 		return null;
-
-		if ( !info.properties.description || !info.properties.description.match(/intestatario/i) ){
-			return null;
-		}
-		try{
-			var dataObj = __getDataObjFromFusionTableItemDescription(info.properties.description);
-			if ( dataObj ){
-				if ( dataObj.Adesione == "si" ){
-					if ( info.parent.properties.name.match(/Meraviglie/i) ){
-						icon.image = "resources/icons/user1/dummy_user_orange.png";
-					}else
-					if ( info.parent.properties.name.match(/Primavera/i) ){
-						icon.image = "resources/icons/user1/dummy_user_green.png";
-					}else
-					if ( info.parent.properties.name.match(/Principe/i) ){
-						icon.image = "resources/icons/user1/dummy_user_yellow.png";
-					}else{
-						icon.image = "resources/icons/user1/dummy_user_blue.png";
-					}
-					return icon;
-				}
-			}
-		}catch (e){}
-
-		icon.image="resources/icons/user1/dummy_user_suppress.png";
-		info.fSuppressInfo = true;
-		return icon;
 	};
 
 
@@ -444,6 +435,7 @@ ixmaps.jsapi = ixmaps.jsapi || {};
 		$("#sidebar").css("height",(maxHeight)+"px");
 
 		$("#layer-dialog-button").css("visibility","visible");
+		$("#timelapbuttons-date").show();
 
 		ixmaps.jsapi.setSidebarClipping(false);
 		ixmaps.jsapi.setSidebarAutoScroll(true);
@@ -480,7 +472,7 @@ ixmaps.jsapi = ixmaps.jsapi || {};
 
 		fFullScreenList = (maxWidth <= 500);
 		if ( fFullScreenList ){
-			var sidebarWidth = maxWidth-45;
+			var sidebarWidth = maxWidth;
 			$("#sidebar").css("width",(sidebarWidth)+"px");
 			$("#map").animate({left:(sidebarWidth)+'px'},nAnimateDuration);
 		}else{
@@ -491,6 +483,7 @@ ixmaps.jsapi = ixmaps.jsapi || {};
 		}
 
 		$("#layer-dialog-button").css("visibility","hidden");
+		$("#timelapbuttons-date").hide();
 
 		ixmaps.jsapi.setSidebarClipping(true);
 		ixmaps.jsapi.setSidebarAutoScroll(true);
@@ -553,6 +546,7 @@ ixmaps.jsapi = ixmaps.jsapi || {};
 		}
 
 		$("#layer-dialog-button").css("visibility","hidden");
+		$("#timelapbuttons-date").show();
 
 		ixmaps.jsapi.setSidebarClipping(false);
 		ixmaps.jsapi.setSidebarAutoScroll(true);

@@ -138,9 +138,9 @@ maptune.selectLayerDialog = function(flag){
 				alert(msg + xhr.status + "\n" + xhr.statusText);
 			  }
 			$("#layer-dialog").css("visibility","visible");
-			$("#layer-dialog").css("height","100%");
+//			$("#layer-dialog").css("height","100%");
 			$("#layer-dialog").css("z-index","9999");
-			$("#layer-dialog").show();
+			$("#layer-dialog").show('slide', {direction: 'right'}, 150);
 
 		});
 	}
@@ -180,7 +180,7 @@ maptune.selectFeedDialog = function(flag){
 			var szHTML = "<a href=\"javascript:maptune.selectFeedDialog('hide');\"><img src='resources/ui/delete.png' height='22' style=\"position:absolute;top:10px;right:10px;\" /></a>";
 			deleteButton.innerHTML = szHTML;
 			$("#feed-dialog-div")[0].appendChild(deleteButton);
-			$("#feed-dialog").show();
+			$("#feed-dialog").show('slide', {direction: 'right'}, 250);
 		});
 	}
 };

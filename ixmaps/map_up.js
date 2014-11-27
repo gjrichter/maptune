@@ -59,7 +59,7 @@ var MapUp = null;
  * @throws 
  * @return A new MapUp
  */
-ixmaps.MapUp = MapUp = function(map,itemDiv,legendDiv) {
+ixmaps.MapUp = MapUp = function(map,mapDiv,itemDiv,legendDiv) {
 
 	/** holds a Google Maps map object */
 	this.map = map;
@@ -1095,7 +1095,8 @@ MapUp.prototype.drawSidebar = function() {
 		szHTML += "<a class=\"listitemcontrol\" title=\"cambia contenuto del elenco\" href=\'javascript:ixmaps.jsapi.setListContent(null,\"none\");\'><img src=\"resources/ui/listview.jpg\" height=\"32\" style='opacity:"+(this.szListContent=="none"?0.5:0.2)+";border:"+(this.szListContent=="none"?"#666 solid 1px":"0")+";'></a>";
 		szHTML += "<a class=\"listitemcontrol\" title=\"cambia contenuto del elenco\" href=\'javascript:ixmaps.jsapi.setListContent(null,\"info\");\'><img src=\"resources/ui/articelview.jpg\" height=\"32\" style='opacity:"+(this.szListContent=="info"?0.5:0.2)+";border:"+(this.szListContent=="info"?"#666 solid 1px":"0")+";'></a>";
 		szHTML += "<a class=\"listitemcontrol\" title=\"cambia contenuto del elenco\" href=\'javascript:ixmaps.jsapi.setListContent(null,\"gallery\");\'><img src=\"resources/ui/galleryview.jpg\" height=\"32\" style='opacity:"+(this.szListContent=="gallery"?0.5:0.2)+";border:"+(this.szListContent=="gallery"?"#666 solid 1px":"0")+";'></a>";
-		szHTML += "<a class=\"listitemcontrol\" title=\"cambia contenuto del elenco\" href=\'javascript:ixmaps.jsapi.setListContent(null,\"hideall\");\'><img src=\"resources/ui/collapse.jpg\" height=\"32\" style='opacity:"+(this.szListContent=="gallery"?0.5:0.2)+";border:"+(this.szListContent=="gallery"?"#666 solid 1px":"0")+";'></a>";
+		szHTML += "<a class=\"listitemcontrol\" title=\"cambia contenuto del elenco\" href=\'javascript:ixmaps.jsapi.setListContent(null,\"hideall\");\'><img src=\"resources/ui/collapse.jpg\" height=\"32\" style='opacity:"+(this.szListContent=="gallery"?0.5:0.2)+";'></a>";
+		szHTML += "<a class=\"listitemcontrol\" title=\"cambia contenuto del elenco\" href=\'javascript:ixmaps.jsapi.toggleLayerType(\"Collection\");\'><img src=\"resources/ui/black_star_u2605_icon_64x64.png\" height=\"32\" style='opacity:"+(ixmaps.jsapi.szLayerType=="Collection"?0.8:0.2)+";'></a>";
 		szHTML += "<a href=\"javascript:javascript:ixmaps.jsapi.setMapContent(null,'show');\"><img src='resources/ui/checkbox_checked.gif' height='22' style=\"opacity:0.2;float:right;margin-right:11px;margin-top:5px\" /></a>";
 		szHTML += "<a href=\"javascript:javascript:ixmaps.jsapi.setMapContent(null,'hide');\"><img src='resources/ui/box.gif' height='22' style=\"opacity:0.2;float:right;margin-right:11px;margin-top:5px\" /></a>";
 		szHTML += "</div>";
@@ -1240,12 +1241,15 @@ MapUp.prototype.synchronize = function() {
 	if ( this.fClipSidebarToMapExtent && !ixmaps.jsapi.fSidebarClick ){
 		this.clearSidebar();
 		this.drawSidebar();
-//		this.highlightSidebarItem(this.map,actualInfoMarker);
+		this.highlightSidebarItem(this.map,actualInfoMarker);
 	}else{
 		this.highlightSidebarItem(this.map,actualInfoMarker);
-		ixmaps.jsapi.fSidebarClick = false;
+		if ( ixmaps.jsapi.fSidebarClickZoom ){
+			ixmaps.jsapi.fSidebarClickZoom = false;
+		}else{
+			ixmaps.jsapi.fSidebarClick = false;
+		}
 	}
-
 
 	if ( fShowTooltips && (this.actualMapZoom >= 15) ){
 		this.showTooltips(true);
@@ -1501,6 +1505,12 @@ MapUp.prototype.makeItemList = function(layerObj) {
 	}
 
 	if ( !markers || markers.length === 0 ){
+		if ( !layer.properties.listItem ){ 
+			var listItem = document.createElement("div");
+			listItem.setAttribute("style","text-align:center");
+			$("<span>(nessun elemento)</span>").appendTo(listItem); 
+			this.itemList.appendChild(listItem);
+		}
 		return 1;
 	}
 	if ( 0 && (__getType(markers[0]) !== "Point") && (__getType(markers[0]) !== "Polygon") ){
@@ -1554,13 +1564,18 @@ MapUp.prototype.makeItemList = function(layerObj) {
 
 		ixmaps.touchScroll("itemlist");
 
-		$(".listitem").live("touchstart", function() {
-		  $(this).addClass("touchactive");
-		}).live("touchmove", function() {
-		  $(this).removeClass("touchactive");
-		}).live("touchend", function() {
-		  $(this).removeClass("touchactive");
-		});
+		// jquery mobile specific
+		// GR 22.11.2014 must be with try 	
+		//
+		try {
+			$(".listitem").live("touchstart", function() {
+			  $(this).addClass("touchactive");
+			}).live("touchmove", function() {
+			  $(this).removeClass("touchactive");
+			}).live("touchend", function() {
+			  $(this).removeClass("touchactive");
+			});
+		}catch (e){}
 	}
 
 	return 1;
@@ -1716,7 +1731,7 @@ MapUp.prototype.makeItemListItems = function(layerObj,defaultIcon,markers) {
 
 			nItems++;
 
-			// if only 'one line' item info
+			// if item with complete info 
 			// ----------------------------
 			if ( layer.fShowInfoInList && markers[i].properties.utime){
 
@@ -1727,12 +1742,12 @@ MapUp.prototype.makeItemListItems = function(layerObj,defaultIcon,markers) {
 				var szDateEnd = "";
 				if ( markers[i].properties.utimeEnd ){
 					d = new Date(Number(markers[i].properties.utimeEnd));
-					szDateEnd = " - "+szDayA[(d.getDay())] + " " + d.getDate()+" " +szMonthA[(d.getMonth())]+ " " +d.getFullYear();
+					szDateEnd = szDayA[(d.getDay())] + " " + d.getDate()+" " +szMonthA[(d.getMonth())]+ " " +d.getFullYear();
 				}
 
 				if ( this.timeline && layer.duration && (szDate != szLastDate) ){
 					var dateItem = document.createElement("p");
-					dateItem.setAttribute("style","font-family:arial;font-size:0.8em;color:#53637D;margin-left:5px;margin-top:5px;margin-bottom:2px;border-bottom:solid 1px #ddd");
+					dateItem.setAttribute("class","itemlist-datum-header");
 
                     var szPiu = "";
 					/**
@@ -1742,7 +1757,7 @@ MapUp.prototype.makeItemListItems = function(layerObj,defaultIcon,markers) {
 						szPiu = " <a href=\"javascript:_mapup_open_sidebar_datesection('"+szDate+"')\" style=\"font-size:0.8em;\">";
 					}
 					**/
-					dateItem.innerHTML = szPiu + szDate + szDateEnd; // + "</a>";
+					dateItem.innerHTML = szPiu + szDate + ((szDateEnd != szDate)?(" - "+szDateEnd):""); 
 					listTable.appendChild(dateItem);
 					szLastDate = szDate;
 				}
@@ -1797,7 +1812,7 @@ MapUp.prototype.makeItemListItems = function(layerObj,defaultIcon,markers) {
 				var szDateEnd = "";
 				if ( markers[i].properties.utimeEnd ){
 					d = new Date(Number(markers[i].properties.utimeEnd));
-					szDateEnd = " - "+ d.getDate()+" " +szMonthA[(d.getMonth())]+ " " +d.getFullYear();
+					szDateEnd = d.getDate()+" " +szMonthA[(d.getMonth())]+ " " +d.getFullYear();
 				}
 
 				var dateItem = document.createElement("p");
@@ -1824,7 +1839,7 @@ MapUp.prototype.makeItemListItems = function(layerObj,defaultIcon,markers) {
 				**/
 				szRowContent += "<p style='font-family:arial;font-size:0.8em;font-weight:normal;color:#53637D;padding-left:30px;margin-top:5px;margin-bottom:-10px;'>";
 				//szRowContent += szPiu + szDate + szDateEnd + "</a>" + szQualify;
-				szRowContent += szDate + szDateEnd + szQualify;
+				szRowContent += szDate + ((szDateEnd!=szDate)?(" - "+szDateEnd):"") + szQualify;
 				szRowContent += "</p>";
 				//dateItem.innerHTML = szPiu + szDate + szDateEnd + "</a>" + szQualify;
 				//listTable.appendChild(dateItem);
@@ -1941,9 +1956,6 @@ MapUp.prototype.makeItemListItems = function(layerObj,defaultIcon,markers) {
 		listItem.setAttribute("class","listitem filterhint");
 		//$("<a href=\'javascript:ixmaps.jsapi.setListContent(\""+layer.properties.name+"\",\"piu\");\' >&nbsp;&nbsp;- tutti "+(markers.length-nItems)+" elementi fuori quadro</a>").appendTo(listItem); 
 
-		if ( nItems == 0 ){
-			$("<div style='text-align:center'>( nessun elemento )</div><br>").appendTo(listItem); 
-		}
 		if ( layerObj.nMarkerOutOfTime ){
 			$("<a href=\'javascript:ixmaps.jsapi.setListContent(\""+layer.properties.name+"\",\"piu\");\' >&nbsp;+ "+(layerObj.nMarkerOutOfTime)+" elementi fuori tempo</a><br>").appendTo(listItem); 
 		}
@@ -2030,8 +2042,10 @@ _mapup_remove_item = function(szSourceName,szLayerName,nItem){
  * @param szLayerName the name of the layer
  * @param nItem JSON the index of the item to copy 
  */
-_mapup_get_collected_items = function(){
+_mapup_get_collected_items = function(count){
 
+	count = count || 0;
+	console.log("_mapup_get_collected_items: "+count);
 	// get collection from local storage
 	var collection = ixmaps.getStoredObject("maptune-collection");
 	if ( collection && (typeof(collection) == "object") ){
@@ -2040,6 +2054,10 @@ _mapup_get_collected_items = function(){
 		target = _mapUp.getLayer("*","Collection");
 		if ( target ){
 			target.data = collection;
+		}else{
+			if ( ++count < 5 ){
+				setTimeout("_mapup_get_collected_items("+(count)+")",1000);
+			}
 		}
 	}
 };
@@ -2111,7 +2129,7 @@ MapUp.prototype.makeItemListGallery = function(layerObj,defaultIcon,markers) {
 			var handler = null;
 			if ( this.map ){
 				if ( markers[i].gOverlayObject ){
-					// if item visible, opem info window
+					// if item visible, open info window
 					handler = _mapup_createMarkerClickHandlerGoto(this.map, markers[i].gOverlayObject, layerObj, markers[i], "normal", i);
 				}else{
 					// if item outside, goto 
@@ -2997,25 +3015,11 @@ MapUp.prototype.highlightSidebarItem = function(map,marker) {
 
 		_map_setDestinationWaypoint(marker);
 
-		var item = marker.listItem;
-		var bgItem = item.firstChild.nextSibling;
-		try{
-			bgItem = item;
-		}
-		catch (e){}
+        this.oldHighLightItem = marker.listItem;
+        marker.listItem.setAttribute("class","listitem listitemselected");
 
-		// set background color
-        /***
-    	this.oldHighLightItem = bgItem;
-		this.oldHighLightItemBg = bgItem.style.background;
-		this.oldHighLightMarker = marker;
-		bgItem.style.background = _mapup_szItemHighlight;
-		bgItem.style.border="1";
-	    **/	
-        this.oldHighLightItem = bgItem;
-        bgItem.setAttribute("class","listitem listitemselected");
 		// calcolate item offset and if outside, scroll sidebar
-		this.scrollToSidebarItem(map,item);
+		this.scrollToSidebarItem(map,marker.listItem);
 	}
 };
 MapUp.prototype.removeHighlightSidebarItem = function(map) {
@@ -3092,7 +3096,7 @@ function _mapup_createMarkerClickHandlerGoto(map, marker, layer, info, szMode, i
 
 		try {
 			requestInfoMarker = marker;
-			var coordinates = __getCoordinates(marker,0);
+			var coordinates = marker.getCoordinates();
 			//map.panTo(new GLatLng(coordinates[1],coordinates[0]));
 			ixmaps.jsapi.panTo(coordinates[1],coordinates[0]);
 		}
@@ -3117,14 +3121,16 @@ function _mapup_createMarkerClickHandler(map, marker, layer, info, szMode, i) {
 
 		if ( actualInfoMarker == marker ){
 			console.log("actualInfoMarker");
-			//return false;
+			ixmaps.jsapi.fSidebarClickZoom = true;
+			_map_setZoom(map,_map_getZoom(map)+1);
+			return false;
 		}
 
 		// calcolate auto clip description by page width
 		//
-		var pageWidth  = parseFloat($("#map").css("width"));
+		var pageWidth  = parseFloat($(mapDiv).css("width"));
 		var mWidth = Math.min(300,pageWidth/3*2);
-		var pageHeight = parseFloat($("#map").css("height"));
+		var pageHeight = parseFloat($(mapDiv).css("height"));
 		var mHeight = Math.min(500,pageHeight/3*2);
 
 		var fDescr = (pageWidth >= 500)?true:false;
@@ -3145,10 +3151,12 @@ function _mapup_createMarkerClickHandler(map, marker, layer, info, szMode, i) {
 
 		// make info content
 		//
-		var szInfo = "<div class=\"InfoWindowHeader\" style=\"max-width:"+(pageWidth-80)+"px\">"+szTitle+"<\/div>";
+		var szInfo = "<div class=\"InfoWindow\" >";
+
+		szInfo += "<div class=\"InfoWindowHeader\" style=\"max-width:"+(pageWidth*0.66)+"px\">"+szTitle+"<\/div>";
 		var szDesc = "";
-		if ( fDescr || !szTitle.length || (info.properties.description.length < nClipDescription) ){
-			szDesc += "<div class=\"InfoWindowBody\" " + (info.properties.description.match(/img/)?"style=\"\"":"") + " >" + info.properties.description + "<\/div>";
+		if ( 1 || fDescr || !szTitle.length || (info.properties.description.length < nClipDescription) ){
+			szDesc += "<div class=\"InfoWindowBody\" " + "style=\"max-width:"+(pageWidth*0.66)+"px;max-height:"+(pageHeight*0.66)+"px;overflow:auto\"" + " >" + info.properties.description + "<\/div>";
 			szDesc  += "<span style='position:absolute;left:0.5em;bottom:4px;'><a class=\"listitem\" href=\"javascript:_mapup_collect_item('"+layer.source+"','"+layer.name+"',"+i+")\" ><span style='font-size:14px;color:#aaaaaa'>&#x2605;</span></a></span>";
 		}else{
 			if ( ixmaps.jsapi.mapParam && ixmaps.jsapi.mapParam.all && ixmaps.jsapi.mapParam.all.smallInfoKeepImage ){
@@ -3189,6 +3197,8 @@ function _mapup_createMarkerClickHandler(map, marker, layer, info, szMode, i) {
 		if ( !szTitle || szTitle.length || !szMode || (szMode != "small") ){
 			szInfo += szDesc;
 		}
+
+		szInfo += "</div>";
 		// make info window	
 		//
 		if ( 0 && typeof(InfoBubble) != "undefined" ){
@@ -3208,9 +3218,12 @@ function _mapup_createMarkerClickHandler(map, marker, layer, info, szMode, i) {
 			marker.openBubble();
 			_map_addEventListner(marker, "openInfoBubble", function(){_mapup_onInfoWindowOpen(marker)});
 			_map_addEventListner(marker, "closeInfoBubble", _mapup_onInfoWindowClose);
+			//_map_setZoom(map,_map_getZoom(map)+1);
 			//map.openInfoWindowHtml(marker.getPoint(),szInfo,{maxWidth:300,maxHeight:200},_mapup_onInfoWindowClose);
 		}
 		actualInfoMarker = marker;
+
+		_mapUp.highlightSidebarItem(map,actualInfoMarker);
 
 		// GR 12.10.2012 see tiptool.js
 		//map.tiptool_.hide();

@@ -290,7 +290,7 @@ function _mapapi_initialize_all(szMapDiv,szItemlistDiv,szLegendDiv,szDirectionsD
 
 	// create map application
 	// ----------------------
-	__mapUp = ixmaps.mapUp =  new ixmaps.MapUp(__map,$("#"+szItemlistDiv+"")[0],$("#"+szLegendDiv+"")[0]);
+	__mapUp = ixmaps.mapUp =  new ixmaps.MapUp(__map,$("#"+szMapDiv+"")[0],$("#"+szItemlistDiv+"")[0],$("#"+szLegendDiv+"")[0]);
 
 	// create map listener for synchronizing
 	// -------------------------------------
@@ -769,6 +769,7 @@ ixmaps.jsapi.setLayerType = function(szString) {
 ixmaps.jsapi.toggleLayerType = function(szString) {
 	this.szLayerType = ((this.szLayerType==szString)?"Map":szString); 
 	__mapUp.redraw();
+	return (this.szLayerType == szString); 
 };
 
 
@@ -1382,13 +1383,12 @@ ixmaps.jsapi.zoomTo = function(lat,lon){
 
 	var nZoomToLevel = Math.max(_map_getZoom(__map),16);
 
+	_map_setCenter(__map,new GLatLng(lat,lon));
+
+	var nZoom = _map_getZoom(__map);
 	if (!_fZoomToSmooth ){
-
-		_map_setCenter(__map,new GLatLng(lat,lon));
-
-		var nZoom = _map_getZoom(__map);
 		_map_setCenterAndZoom(__map,new GLatLng(lat,lon),nZoomToLevel);
-
+	}else{
 		var nTimeOutStep = 250;
 		var nTimeOut = nTimeOutStep;
 		while ( nZoom < nZoomToLevel ){
@@ -1399,32 +1399,8 @@ ixmaps.jsapi.zoomTo = function(lat,lon){
 			setTimeout("ixmaps.jsapi.setCenterAndZoom(new GLatLng("+lat+","+lon+"),"+(--nZoom)+");",nTimeOut);
 			nTimeOut += nTimeOutStep;
 		}
-		return;
 	}
-
-	var nZoom = _map_getZoom(__map);
-	var nTimeOutStep = 500;
-	var nTimeOut = nTimeOutStep;
-
-	var actualLat = _map_getCenter(__map).y;
-	var actualLon = _map_getCenter(__map).x;
-
-	var dLat = (lat-actualLat)/10;
-	var dLon = (lon-actualLon)/10;
-	
-	actualLat += dLat;
-	actualLon += dLon;
-	for ( var i=0; i<10; i++ ){
-		setTimeout("ixmaps.jsapi.setCenterAndZoom(new GLatLng("+actualLat+","+actualLon+"),"+nZoom+");",nTimeOut);
-		actualLat += dLat;
-		actualLon += dLon;
-		nTimeOut += nTimeOutStep/3;
-	}
-		nTimeOut += nTimeOutStep;
-	while ( ++nZoom <= nZoomToLevel ){
-		setTimeout("ixmaps.jsapi.setCenterAndZoom(new GLatLng("+lat+","+lon+"),"+nZoom+");",nTimeOut);
-		nTimeOut += nTimeOutStep;
-	}
+	return;
 };
 ixmaps.jsapi.zoomTo_step = function(lat,lon){
 	_map_setCenter(__map,new GLatLng(lat,lon));

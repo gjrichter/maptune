@@ -86,8 +86,7 @@ function _map_loadMap(target,szMapService) {
 			  mapstraction.addTileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 				 name: "OpenStreetMap",
 				 myname: "OpenStreetMap",
-				 attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a>.'+
-							  ' &hearts; <a href="http://donate.openstreetmap.org" target="_blank">Fai una donazione</a>',
+				 attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a>.',
 				 subdomains: ['otile1','otile2','otile3','otile4'],
 				 maxZoom: 19
 			  });
@@ -785,6 +784,10 @@ GMarker = function(point,opt) {
 		return { lat:function(){return x.point.lat},lng:function(){return x.point.lng} };
 	};
 	x.getPosition = function() {
+		return [ x.point.lat,x.point.lng ];
+	};
+	x.getCoordinates = function() {
+		return [ x.point.lng,x.point.lat ];
 	};
 	x.attachTipTool = function(text,opt){
 	};

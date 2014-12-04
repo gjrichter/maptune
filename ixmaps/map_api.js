@@ -965,8 +965,7 @@ ixmaps.jsapi.doreset = function() {
 
 	__mapUp.setExtent("maximal");
 
-	setTimeout("_mapup_get_collected_items()",1000);
-
+	_mapup_get_collected_items();
 };
 
 ixmaps.jsapi.clear = function() {
@@ -1346,15 +1345,15 @@ ixmaps.jsapi.popupFullDescription = function() {
 	$("#myPopupDiv").css("padding","10px");
 	$("#myPopupDiv").css("padding-right","1em");
 	$("#myPopupDiv").css("visibility","visible");
-	$("#myPopupDiv").css("width",$("#map").width()-40)+"px";
-	$("#myPopupDiv").css("height",$("#map").height()-80)+"px";
+	$("#myPopupDiv").css("width",$("#"+ixmaps.jsapi.szMapDiv).width()-50)+"px";
+	$("#myPopupDiv").css("height",$("#"+ixmaps.jsapi.szMapDiv).height()-80)+"px";
 
 	$("#myPopupDivBG").css("visibility","visible");
 	$("#myPopupDivBG").css("position","absolute");
 	$("#myPopupDivBG").css("top",offset.top+"px");
 	$("#myPopupDivBG").css("left",offset.left+"px");
-	$("#myPopupDivBG").css("width",$("#map").width());
-	$("#myPopupDivBG").css("height",$("#map").height());
+	$("#myPopupDivBG").css("width",$("#"+ixmaps.jsapi.szMapDiv).width());
+	$("#myPopupDivBG").css("height",$("#"+ixmaps.jsapi.szMapDiv).height());
 
 	ixmaps.touchScroll("myPopupDiv");
 	ixmaps.touchScroll("myPopupDiv-content");
@@ -1413,7 +1412,7 @@ ixmaps.jsapi.zoomToLayer = function(szName){
 	if ( szName && szName.length ){
 		__mapUp.setExtent("tolayer",szName);
 	}else{
-		__mapUp.setExtent("maximal");
+		__mapUp.setExtent("actual");
 	}
 };
 ixmaps.jsapi.zoomToLayerExtent = function(szName){

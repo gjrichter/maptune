@@ -1298,7 +1298,7 @@ ixmaps.jsapi.setEmbedAudioInInfo = function(state) {
  * @return ---
  */
 ixmaps.jsapi.resolveRelativeUrl = function(szRel,szUrl) {
-	if ( szUrl && szRel && !szRel.match(/http:/i) ){
+	if ( szUrl && szRel && !szRel.match(/http:/i) && !szRel.match(/https:/i) ){
 		return this.getUrlRoot(szUrl) + szRel;
 	}else{
 		return szRel;
@@ -1321,41 +1321,35 @@ ixmaps.jsapi.getUrlRoot = function(szUrl){
  */
 ixmaps.jsapi.popupFullDescription = function() {
 
-	$("#myPopupDiv")[0].innerHTML = "";
-
+	$("#myPopup")[0].innerHTML = "";
 
 	var divDescription = document.createElement("div");
 	divDescription.setAttribute("id","myPopupDiv-content");
-	divDescription.setAttribute("style","margin-top:30px;height:92%;max-width:100%;overflow:auto;");
 	divDescription.innerHTML = ixmaps.jsapi.szInfoWindowFullDescription;
-	$("#myPopupDiv")[0].appendChild(divDescription);
+	$("#myPopup")[0].appendChild(divDescription);
 
 	var deleteButton = document.createElement("div");
 	deleteButton.setAttribute("id","myPopupDiv-delete-button");
-	var szHTML = "<a href=\"javascript:ixmaps.jsapi.closeFullDescription();\"><img src='resources/ui/delete.png' height='22' style=\"position:absolute;top:10px;right:10px;\" /></a>";
+	var szHTML = "<a href=\"javascript:ixmaps.jsapi.closeFullDescription();\"><img src='resources/ui/delete.png'\" /></a>";
 	deleteButton.innerHTML = szHTML;
-	$("#myPopupDiv")[0].appendChild(deleteButton);
+	$("#myPopup")[0].appendChild(deleteButton);
 
 	var offset = $("#map").position();
 	$("#myPopupDiv").css("position","absolute");
 	$("#myPopupDiv").css("top",offset.top+"px");
 	$("#myPopupDiv").css("left",offset.left+"px");
-	$("#myPopupDiv").css("background","#fff");
-	$("#myPopupDiv").css("margin","0.5em");
-	$("#myPopupDiv").css("padding","10px");
-	$("#myPopupDiv").css("padding-right","1em");
 	$("#myPopupDiv").css("visibility","visible");
-	$("#myPopupDiv").css("width",$("#"+ixmaps.jsapi.szMapDiv).width()-50)+"px";
-	$("#myPopupDiv").css("height",$("#"+ixmaps.jsapi.szMapDiv).height()-80)+"px";
+	$("#myPopupDiv").css("width",$("#"+ixmaps.jsapi.szMapDiv).width())+"px";
+	$("#myPopupDiv").css("height",$("#"+ixmaps.jsapi.szMapDiv).height())+"px";
 
 	$("#myPopupDivBG").css("visibility","visible");
 	$("#myPopupDivBG").css("position","absolute");
 	$("#myPopupDivBG").css("top",offset.top+"px");
 	$("#myPopupDivBG").css("left",offset.left+"px");
-	$("#myPopupDivBG").css("width",$("#"+ixmaps.jsapi.szMapDiv).width());
-	$("#myPopupDivBG").css("height",$("#"+ixmaps.jsapi.szMapDiv).height());
+	$("#myPopupDivBG").css("width",$("#"+ixmaps.jsapi.szMapDiv).width(+"px"));
+	$("#myPopupDivBG").css("height",$("#"+ixmaps.jsapi.szMapDiv).height()+"px");
 
-	ixmaps.touchScroll("myPopupDiv");
+	ixmaps.touchScroll("myPopup");
 	ixmaps.touchScroll("myPopupDiv-content");
 
 	// $( "#myPopupDiv" ).popup();
@@ -1382,12 +1376,12 @@ ixmaps.jsapi.zoomTo = function(lat,lon){
 
 	var nZoomToLevel = Math.max(_map_getZoom(__map),16);
 
-	_map_setCenter(__map,new GLatLng(lat,lon));
-
-	var nZoom = _map_getZoom(__map);
 	if (!_fZoomToSmooth ){
-		_map_setCenterAndZoom(__map,new GLatLng(lat,lon),nZoomToLevel);
+		// normal case
+		_map_setZoom(__map,nZoomToLevel);
+		_map_setCenter(__map,new GLatLng(lat,lon));
 	}else{
+		var nZoom = _map_getZoom(__map);
 		var nTimeOutStep = 250;
 		var nTimeOut = nTimeOutStep;
 		while ( nZoom < nZoomToLevel ){
@@ -1477,7 +1471,7 @@ ixmaps.jsapi.openlink = function(url){
 
 ixmaps.jsapi.getResourceUrl = function(url){
 	if ( url ){
-		return url.match(/http:/)?url:__resourceRoot+url;
+		return (url.match(/http:/i) || url.match(/https:/i))?url:__resourceRoot+url;
 	}
 	return url;
 };

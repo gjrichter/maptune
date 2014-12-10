@@ -87,7 +87,7 @@ ixmaps.feed.parse = ixmaps.feed.parse || {};
 				var szText = pl.description||"&nbsp;";
 				var szTitle = pl.name;
 
-				var szHtml  = "<p>"+szText+"<p>";
+				var szHtml  = "<p>"+szText+"</p>";
 				if ( opt.fonte ){
 					szHtml += "<p style='font-size:0.7em;margin-top:10px;'><span style='color:#ddd;'>fonte: </span><a href='"+opt.fonte+"'>"+opt.fonte+"</a></p>";
 				}
@@ -138,7 +138,7 @@ ixmaps.feed.parse = ixmaps.feed.parse || {};
 				var szText = pl.description||"&nbsp;";
 				var szTitle = pl.name;
 
-				var szHtml  = "<p>"+szText+"<p>";
+				var szHtml  = "<p>"+szText+"</p>";
 				if ( opt.fonte ){
 					szHtml += "<p style='font-size:0.7em;margin-top:10px;'><span style='color:#ddd;'>fonte: </span><a href='"+opt.fonte+"'>"+opt.fonte+"</a></p>";
 				}
@@ -183,7 +183,7 @@ ixmaps.feed.parse = ixmaps.feed.parse || {};
 				var szText = pl.description||"&nbsp;";
 				var szTitle = pl.name;
 
-				var szHtml  = "<p>"+szText+"<p>";
+				var szHtml  = "<p>"+szText+"</p>";
 				if ( opt.fonte ){
 					szHtml += "<p style='font-size:0.7em;margin-top:10px;'><span style='color:#ddd;'>fonte: </span><a href='"+opt.fonte+"'>"+opt.fonte+"</a></p>";
 				}
@@ -307,7 +307,7 @@ ixmaps.feed.parse = ixmaps.feed.parse || {};
 				var szText = pl.description||"&nbsp;";
 				var szTitle = pl.name;
 
-				var szHtml  = "<p>"+szText+"<p>";
+				var szHtml  = "<p>"+szText+"</p>";
 				if ( opt.fonte ){
 					szHtml += "<p style='font-size:0.7em;margin-top:10px;'><span style='color:#ddd;'>fonte: </span><a href='"+opt.fonte+"'>"+opt.fonte+"</a></p>";
 				}
@@ -364,7 +364,7 @@ ixmaps.feed.parse = ixmaps.feed.parse || {};
 				var szText = pl.description||"&nbsp;";
 				var szTitle = pl.name;
 
-				var szHtml  = "<p>"+szText+"<p>";
+				var szHtml  = "<p>"+szText+"</p>";
 				if ( opt.fonte ){
 					szHtml += "<p style='font-size:0.7em;margin-top:10px;'><span style='color:#ddd;'>fonte: </span><a href='"+opt.fonte+"'>"+opt.fonte+"</a></p>";
 				}
@@ -410,7 +410,7 @@ ixmaps.feed.parse = ixmaps.feed.parse || {};
 				var szText = pl.description||"&nbsp;";
 				var szTitle = pl.name;
 
-				var szHtml  = "<p>"+szText+"<p>";
+				var szHtml  = "<p>"+szText+"</p>";
 				if ( opt.fonte ){
 					szHtml += "<p style='font-size:0.7em;margin-top:10px;'><span style='color:#ddd;'>fonte: </span><a href='"+opt.fonte+"'>"+opt.fonte+"</a></p>";
 				}

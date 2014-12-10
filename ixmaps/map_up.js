@@ -1489,15 +1489,14 @@ MapUp.prototype.makeItemList = function(layerObj) {
 				szValue = (typeof(szValue) != "undefined")?szValue:"";
 				if ( layer.fLayerSpecificFilter ){
 					szHTML += "<div "
-							  +"class=\"itemlist-filterform\" style=\"float:left\" "
+							  +"class=\"itemlist-filterform\" "
 							  +"name=\"IndicatorFilterForm"+layer.properties.name+"\">" 
-									+"<img src=\"./resources/images/search2.png\" style=\"position:relative;left:-2px;top:1px;\" height=\"14\" />" 
-									+"<input class=\"ifield\" id=\"query\" type=\"text\" size=\"9\" "
-										+"value=\""+ szValue +"\" "
-										+"style=\"width:150px;height:22px;position:relative;top:0px;border:none;\" title=\"query map items\" " 
-										+"onkeyup=\"javascript:var value = $(this).val();ixmaps.jsapi.search('"+layer.properties.name+"',value);\" "
-										+"onsubmit=\"javascript:return false;\" >"
-									+"</input>"
+								+"<form id=\"IndicatorFilterFormH\" name=\"IndicatorFilterFormH\" action=\"javascript:ixmaps.jsapi.search();\"> "
+								  +"<input id=\"query-inline\" placeholder=\"filter\" title=\"define filter\" "	
+									+"style=\"width:150px;height:22px;position:relative;top:0px;border:none\" title=\"query map items\" " 
+									+"onkeyup=\"javascript:var value = $(this).val();ixmaps.jsapi.search('"+layer.properties.name+"',value);\" "
+									+"onsubmit=\"javascript:return false;\" value=\""+szValue+"\">"
+								+"</form>" 
 							  +"</div>";
 				}
 				szHTML += "<a href=\"javascript:ixmaps.jsapi.removeData('"+layer.source+"')\"><img src='resources/ui/delete.png' height='22' style=\"opacity:0.3;float:right;margin-right:11px;margin-top:7px\" /></a>";
@@ -1612,7 +1611,7 @@ MapUp.prototype.fixItemListTitles = function() {
 		this.oldTop = o;
 		// if header is scrolled outside on top; fix it to top
 		//
-		if ( p && (p+$(window)[0].pageYOffset+35 > o)  ){
+		if ( p && (p+$(window)[0].pageYOffset+150 > o)  ){
 			this.style['position'] = 'fixed'; 
 			this.style['background'] = '#fff';
 			this.style['width'] = (width) + 'px';
@@ -1786,8 +1785,13 @@ MapUp.prototype.makeItemListItems = function(layerObj,defaultIcon,markers) {
             
 			var szRowContent = "";
 
+			// make all a button
+			// -----------------
 			szRowContent += "<a href=\"javascript:void(0);\">";
 
+			// a) listitem - left part
+			// =======================
+			//
 			szRowContent += "<div class=\"listitem-left\" >";
 
 			//szRowContent += "<a href=\"javascript:void(0);\">";
@@ -1803,7 +1807,15 @@ MapUp.prototype.makeItemListItems = function(layerObj,defaultIcon,markers) {
 			//szRowContent += "</a>";
 
 			szRowContent += "</div>";
+			//
+			// ----------------------
 
+			// b) listitem - right part
+			// ========================
+			//
+
+			// if list mode compact -  show image, if parametrized
+			// ----------------------------------------------------
 			if ( !fShowInfoInList && (ixmaps.jsapi.mapParam && ixmaps.jsapi.mapParam.all && ixmaps.jsapi.mapParam.all.oneLineKeepImage) ){
 				var match = markers[i].properties.description.match(/src=(?:\"|\')?([^>]*[^/].(?:jpg|jpeg|bmp|gif|png))(?:\"|\')?/i);
 				var szImg = (match && (match.length>1))?(match[1]):"";
@@ -1848,8 +1860,10 @@ MapUp.prototype.makeItemListItems = function(layerObj,defaultIcon,markers) {
 				szRowContent += "</p>";
 			}
 
-			szRowContent += "<div class=\"listitem-right\" ><p class=\"item\" style=\"padding-top:5px;\">";
+			// make regular right part
+			// ------------------------------------------------------------------------------
 
+			szRowContent += "<div class=\"listitem-right\" ><p class=\"item\" style=\"padding-top:5px;\">";
 
 			var szTitle = markers[i].properties.name;
 
@@ -1867,15 +1881,16 @@ MapUp.prototype.makeItemListItems = function(layerObj,defaultIcon,markers) {
 			if ( fShowInfoInList ){
 				szRowContent += szTitle;
 			}else{
-				szRowContent += "<div style=\"margin:0px;padding-right:20px;margin-top:-3px;opacity:"+nOpacity+"\">"+szTitle+"</div>";
-			}
+				szRowContent += "<div style=\"margin:0px;padding-right:20px;margin-top:-3px;\">"+szTitle+"</div>";
 
-            if ( !markers[i].gOverlayObject) {
-				szRowContent += "&nbsp;  <a class=\"noprint\" title=\"mostra punto ingrandito\" href=\'#\'><img src='resources/ui/zoomto.png' height='24' style='float:right;margin-top:-5px;margin-right:4px;' /></a>" ;
-				if ( fFullScreen ){
-					szRowContent += "<p></p>";
+				if ( !markers[i].gOverlayObject) {
+					szRowContent += "&nbsp;  <a class=\"noprint\" title=\"mostra punto ingrandito\" href=\'#\'><img src='resources/ui/zoomto.png' height='24' style='float:right;margin-top:-5px;margin-right:4px;' /></a>" ;
+					if ( fFullScreen ){
+						szRowContent += "<p></p>";
+					}
 				}
 			}
+
 			if ( fShowInfoInList && markers[i].properties.description && !markers[i].fSuppressInfo ){
 
 				var	szDesc = markers[i].properties.description;
@@ -1884,14 +1899,14 @@ MapUp.prototype.makeItemListItems = function(layerObj,defaultIcon,markers) {
 					szDesc = ixmaps.jsapi.onOpenInfoWindow(markers[i].properties.description,markers[i],"sidebar");
 				}
 				catch (e){}
-
 				if ( szDesc && szDesc.length ){
-					szRowContent += "<div class=\"framed\" >"+szDesc+"</div>";
+					szRowContent += "<div class=\"framed description\" >"+szDesc+"</div>";
 				}
+
 				if ( 1 ){
 					if ( layerObj.name == "Collection" ){
-						szRowContent += "<a href=\"javascript:_mapup_remove_item('"+layerObj.source+"','"+layerObj.name+"',"+i+")\" >"+"remove "+"</a>";
-						szRowContent += "<a href=\"javascript:_mapup_remove_item('"+layerObj.source+"','"+layerObj.name+"',"+i+")\" >&#x2605;</a>";
+						szRowContent += "<a href=\"#\" onclick=\"event.stopPropagation();_mapup_remove_item('"+layerObj.source+"','"+layerObj.name+"',"+i+")\" >"+"remove "+"</a>";
+						szRowContent += "<a href=\"#\" onclick=\"event.stopPropagation();_mapup_remove_item('"+layerObj.source+"','"+layerObj.name+"',"+i+")\" >&#x2605;</a>";
 					}else{
 						szRowContent += "<a href=\"#\" onclick=\"event.stopPropagation();_mapup_collect_item('"+layerObj.source+"','"+layerObj.name+"',"+i+")\" >"+"collect "+"</a>";
 						szRowContent += "<a href=\"#\" onclick=\"event.stopPropagation();_mapup_collect_item('"+layerObj.source+"','"+layerObj.name+"',"+i+")\" >&#x2605;</a>";
@@ -1925,9 +1940,19 @@ MapUp.prototype.makeItemListItems = function(layerObj,defaultIcon,markers) {
 			if ( fShowLinkInList &&  markers[i].properties.data && markers[i].properties.data.LNK_1 ){
 				szRowContent += "<iframe align=\"left\" src =\""+markers[i].properties.data.LNK_1+"\" width=\"720\" height=\"600\" />";
 			}
+			// finish right part
+			// ------------------------------------------------------------------------------
             szRowContent += "</div>";
+
+			// finish 'all is button' 
+			// ------------------------------------------------------------------------------
 			szRowContent += "</a>";
+
+
+			// finally make list item 
+			// ------------------------------------------------------------------------------
 			$(szRowContent).appendTo(listItem); 
+			// ------------------------------------------------------------------------------
 
 			if ( (typeof(handler) != "undefined") && handler ){
 				listItem.onclick = handler;
@@ -1980,17 +2005,32 @@ _mapup_open_sidebar_datesection = function(szDate){
 
 /*
  * copy item into the user collection layer
- * update local storage collection object
+ * ask user to confirm
  * @param szSourceName the name of the layer source (if layer is sublayer)
  * @param szLayerName the name of the layer
  * @param nItem JSON the index of the item to copy 
  */
 _mapup_collect_item = function(szSourceName,szLayerName,nItem){
+
+	var	target = _mapUp.getLayer("*","Collection");
+	ixmaps.confirmMessage("add to: '"+target.title+"' ?",function(){
+		_mapup_do_collect_item(szSourceName,szLayerName,nItem);
+	});
+};
+
+/*
+ * execute copy into the user collection layer
+ * update local storage collection object
+ * @param szSourceName the name of the layer source (if layer is sublayer)
+ * @param szLayerName the name of the layer
+ * @param nItem JSON the index of the item to copy 
+ */
+_mapup_do_collect_item = function(szSourceName,szLayerName,nItem){
 	layer = _mapUp.getLayer(szSourceName,szLayerName);
 	if ( layer ){
 
 		// copy item into collection
-		target = _mapUp.getLayer("*","Collection");
+		var target = _mapUp.getLayer("*","Collection");
 		var icon = layer.data.features[nItem].gOverlayObject.getIcon();
 		icon = _mapup_getIcon(_mapUp.map,_mapup_szDefaultMarker,layer.data,layer.data.features,nItem,"");
 		if ( icon ){
@@ -3149,21 +3189,22 @@ function _mapup_createMarkerClickHandler(map, marker, layer, info, szMode, i) {
 		// make info content
 		//
 		var szInfo = "<div class=\"InfoWindow\" >";
-
 		szInfo += "<div class=\"InfoWindowHeader\" style=\"max-width:"+(pageWidth*0.66)+"px\">"+szTitle+"<\/div>";
+
 		var szDesc = "";
+		ixmaps.jsapi.szInfoWindowFullDescription = szInfo + info.properties.description;
+		
 		if ( fDescr || !szTitle.length || (info.properties.description.length < nClipDescription) ){
 
 			// insert full description as defined in source
 			// --------------------------------------------
 			szDesc += "<div class=\"InfoWindowBody\" " + "style=\"max-width:"+(pageWidth*0.66)+"px;max-height:"+(pageHeight*0.66)+"px;overflow:auto\"" + " >" + info.properties.description + "<\/div>";
-			szDesc += "<span style='position:absolute;left:0.5em;bottom:4px;'><a class=\"listitem\" href=\"javascript:_mapup_collect_item('"+layer.source+"','"+layer.name+"',"+i+")\" ><span style='font-size:14px;color:#aaaaaa'>&#x2605;</span></a></span>";
 
 		}else{
 
 			// insert small description parsed from data, and link to ixmaps.jsapi.popupFullDescription()
 			// ------------------------------------------------------------------------------------------
-			szDesc += "<div class=\"InfoWindowBody\" >";
+			szDesc += "<div class=\"InfoWindowBody\" onclick=\"event.stopPropagation();ixmaps.jsapi.popupFullDescription();\" >";
 
 			if ( info.properties.utime ){
 				var d = new Date(Number(info.properties.utime));
@@ -3181,11 +3222,10 @@ function _mapup_createMarkerClickHandler(map, marker, layer, info, szMode, i) {
 				}
 			}
 			szDesc += "</div>";
-			szDesc += "<span class=\"InfoWindowFooter\" style=\"float:left;margin-left:-0.3em;margin-right:0.5em\" >";
-			szDesc += "<a href=\"javascript:ixmaps.jsapi.popupFullDescription();\"><img src='resources/ui/arrow_right.png' height='22' /></a></div>";
-			szDesc += "</span>";
+			szDesc += "<div style=\"clear:both;opacity:0.3;text-align:center\" >";
+			szDesc += "<a href=\"javascript:ixmaps.jsapi.popupFullDescription();\">view <img src='resources/ui/arrow_right.png' height='22' /></a></div>";
+			szDesc += "</div>";
 
-			ixmaps.jsapi.szInfoWindowFullDescription = szInfo + info.properties.description;				
 			ixmaps.jsapi.infoWindowMarker = marker;				
 			ixmaps.jsapi.closeFullDescription();
 		}
@@ -3204,11 +3244,11 @@ function _mapup_createMarkerClickHandler(map, marker, layer, info, szMode, i) {
 		if ( 1 ){
 			szDesc += "<span class=\"InfoWindowFooter\" style=\"vertical-align:-0.25em;\">";
 			if ( layer.name == "Collection" ){
-				szDesc += "<a href=\"javascript:_mapup_remove_item('"+layer.source+"','"+layer.name+"',"+i+")\" >"+"remove "+"</a>";
-				szDesc += "<a href=\"javascript:_mapup_remove_item('"+layer.source+"','"+layer.name+"',"+i+")\" >&#x2605;</a>";
+				szDesc += "<a href=\"#\" onclick=\"event.stopPropagation();_mapup_remove_item('"+layer.source+"','"+layer.name+"',"+i+")\" >"+"remove "+"</a>";
+				szDesc += "<a href=\"#\" onclick=\"event.stopPropagation();_mapup_remove_item('"+layer.source+"','"+layer.name+"',"+i+")\" >&#x2605;</a>";
 			}else{
-				szDesc += "<a href=\"javascript:_mapup_collect_item('"+layer.source+"','"+layer.name+"',"+i+")\" >"+"collect "+"</a>";
-				szDesc += "<a href=\"javascript:_mapup_collect_item('"+layer.source+"','"+layer.name+"',"+i+")\" >&#x2605;</a>";
+				szDesc += "<a href=\"#\" onclick=\"event.stopPropagation();_mapup_collect_item('"+layer.source+"','"+layer.name+"',"+i+")\" >"+"collect "+"</a>";
+				szDesc += "<a href=\"#\" onclick=\"event.stopPropagation();_mapup_collect_item('"+layer.source+"','"+layer.name+"',"+i+")\" >&#x2605;</a>";
 			}
 			szDesc += "</span>";
 		}
@@ -3553,10 +3593,10 @@ Timeline.prototype.setTimeWindow = function(szFlag,nDays,startTime){
 		case "month":
 				var d = new Date(startTime);
 				this.high = d.getTime();
-				d = new Date(d.getFullYear(),d.getMonth(),1);
+				d = new Date(d.getFullYear(),d.getMonth()-1,1);
 				this.low = d.getTime();
 				var nDaysInMonth = (32 - new Date(d.getFullYear(), d.getMonth(), 32).getDate());
-				d = new Date(d.getFullYear(), d.getMonth(),nDaysInMonth);
+				d = new Date(d.getFullYear(), d.getMonth()-1,nDaysInMonth);
 				this.high = d.getTime() + 1000*60*60*24 - 1;
 				break;
 

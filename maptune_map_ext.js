@@ -173,12 +173,12 @@ ixmaps.jsapi = ixmaps.jsapi || {};
 	// create link to call streetview from destination string
 	// ----------------------------------------------------------------
 	ixmaps.jsapi.getStreetLink = function(szDestination){
-		return ("<a href='javascript:ixmaps.jsapi.showStreeView("+szDestination+");' class='streetview-link-map' data-role='button' data-inline='true' data-theme='c' ></a>");
+		return ("<a href='#' onclick='event.stopPropagation();ixmaps.jsapi.showStreeView("+szDestination+");' class='streetview-link-map' data-role='button' data-inline='true' data-theme='c' ></a>");
 	};
 	// create link to zoom to item
 	// ----------------------------------------------------------------
 	ixmaps.jsapi.getZoomLink = function(szDestination){
-		return ("<a href='javascript:ixmaps.jsapi.zoomTo("+szDestination+");' ><img src='resources/ui/zoomto.png' height='24' /></a>");
+		return ("<a href='#' onclick='event.stopPropagation();ixmaps.jsapi.zoomTo("+szDestination+");' ><img src='resources/ui/zoomto.png' height='24' /></a>");
 	};
 	// use yahoo YQL webservice as proxy to get around origin problems
 	// ----------------------------------------------------------------

@@ -1,0 +1,13 @@
+.post_content{
+	background:#f4f4f2;
+	font:1.2em/19px "helvetica neue",Helvetica,Arial,Verdana,sans-serif;
+	color:#666;
+	position:relative;
+	background:url(../images/bg-post-content.png) 0 no-repeat;
+	margin:0 0 0 0;
+	}
+.post_date{width:65px;height:80px;position:relative;top:0px;right:0px;}
+.post_date .dateinfo{font-weight:normal;color:#bbb;font-size:9px;margin:0px 0 0 0;display:block;text-align:center;}
+.post_date .day{font-weight:bold;color:#FFF;font-size:27px;margin:1px 0 0 0;display:block;text-align:center;}
+.post_date .month{color:#A2A3A4;font-size:15px;text-transform:uppercase;display:block;margin:-19px 0 0 0;text-align:center;}
+.post_date .year{color:#A2A3A4;font-size:14px;text-transform:uppercase;display:block;margin:-23px 0 0 0;text-align:center;}

@@ -53,7 +53,7 @@ $ git checkout gh-pages
 		anche tabelle georeferenziate in CSV. Inoltre il parser di MapTune è estendibile via plugin, e cosi adattabile a nuovi o proprietari formati, basta che si basino su XML o JSON.</p>
 		<p>Per caricare un dataset sulla mappa di MapTune, si definisce una descrizione della fonte dei dati e della rappresentazione sia per la mappa che per la lista.
 		Questa descrizione è un semplice oggetto in JSON. Di seguito quella per gli 'Eventi condivisi' usata per questa applicazione:</p>
-		<code>
+<pre><code>
 maptune.addFeedLayer('http://goo.gl/Fo9jnt',{
   type:  'csv',
   format:'csv',
@@ -110,15 +110,15 @@ maptune.addFeedLayer('http://goo.gl/Fo9jnt',{
 
 flag:'zoomto'});
 }
-		</code>
+</code></pre>
 		<br>		
 		<p>Come si può notare, non è solo l'oggetto JSON, ma anche la 'function call' in Javascript per aggiungere la nuova fonte alla mappa. Il primo argomento:</p>
-		<code>
+<pre><code>
 'http://goo.gl/Fo9jnt'
-		</code>
+</code></pre>
 		<p>definisce la sorgente dei dati, in questo caso un link ad un 'Google Spreadsheet', che contiene gli 'eventi condivisi'. Il link porta ad avere un documento in CSV</p>
 		<p>Il 'parser':</p> 
-		<code>
+<pre><code>
 parser: {
 lat:       'lat',
 lon:       'lng',
@@ -129,10 +129,10 @@ label:     'true',
 info:      'Organizzatore|Note|Pagamento|Tipologia|Data inizio|Data fine|Luogo|Link|Email_contatto|Link_immagine ',
 image:     'Link_immagine'   
 },
-		</code>
+</code></pre>
 		<p>definisce i campi della tabella in CSV dove si trovano: la posizione (lat,lon) dell'evento, la data di inizio e fine dell'evento, ed i campi da presentare nella lista o sulla mappa.</p> 
 		<p>l'oggetto 'layer':</p> 
-		<code>
+<pre><code>
 layer:{ 
 name:        'Eventi Condivisi',
 description: 'Eventi OpenData in collaborazione con Comitato Matera 2019 Mappa ... ',
@@ -166,13 +166,13 @@ categoryList: {
 				'smallImage' : 'resources/icons/default/default-small_red.png'
 			  }
   },
-		</code>
+</code></pre>
 		<p>definisce la rappresentazione categorizzata degli elementi sulla mappa</p>
 		<h3>parser plugin per 'MateraPulita'</h3>
 		<p>Nella lista dei sorgenti 'Open Data' da aggiungere alla mappa, si trova anche un feed in XML proprietario, 'http://www.materapulita.it/app/segnalazioniopen.xml',
 		che richiede un plugin per il parser di MapTune. Il plugin viene definito in un file Javascript con il nome 'map_feed.parse.MateraPulita.js' e riferito nella configurazione del feed come parametro 'type':'MateraPulita', quindi con lo stesso nome del parser plugin.
 		</p>
-		<code>
+<pre><code>
 ...
 &lt;a href="javascript:maptune.addFeedLayer('http://www.materapulita.it/app/segnalazioniopen.xml',{
   type:'<span style="color:#2244dd">MateraPulita</span>',
@@ -181,9 +181,9 @@ categoryList: {
   title:'MateraPulita'
  });" &gt:MateraPulita (xml)&lt;/a&gt;
 ...
-		</code>
+</code></pre>
 		<p style="margin-bottom:10px;">Il plugin deve definiere il parser propriertario più o meno cosi: </p>
-		<code>
+<pre><code>
 window.ixmaps = window.ixmaps || {};
 ixmaps.feed = ixmaps.feed || {};
 ixmaps.feed.parse = ixmaps.feed.parse || {};
@@ -218,7 +218,7 @@ ixmaps.feed.parse = ixmaps.feed.parse || {};
   };
 })();
 
-		</code>
+</code></pre>
 		<p>Non aggiungo altro alla descrizione, ma per qualsiasi domanda sono a disposizione su:
 		guenter.richter@gmail.com</p>
 <a href="http://public.ixmaps.com.s3-website-eu-west-1.amazonaws.com/maptune/maptune_flat.html?param=Libera.js">test</a>

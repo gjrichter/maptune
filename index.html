@@ -25,6 +25,9 @@
 <p>MapTune è un Framework in Javascript per visualizzare geo data feed di vari formati.
 MapTune può interpretare vari formati geodata 'standard' tra i quali KML, geoJson e GeoRSS ma 
 anche tabelle georeferenziate in CSV. Inoltre il parser di MapTune è estendibile via plugin, e cosi adattabile a nuovi o proprietari formati, basta che si basino su XML o JSON.</p>
+
+<a href=http://public.ixmaps.com.s3-website-eu-west-1.amazonaws.com/maptune/maptune_flat.html?param=Libera.js" class="btn">online demo</a>
+
 <p>Per caricare un dataset sulla mappa di MapTune, si definisce una descrizione della fonte dei dati e della rappresentazione sia per la mappa che per la lista.
 Questa descrizione è un semplice oggetto in JSON. Di seguito un esempio che dimostra alcuni delle possibilità di configurare la visualizzazione e l'interpretazione dei dati:</p>
 
@@ -153,7 +156,7 @@ categoryList: {
   },
 </code></pre>
 		<p>definisce la rappresentazione categorizzata degli elementi sulla mappa</p>
-		<h3>parser plugin per 'MateraPulita'</h3>
+		<h3>definire un parser plugin per il formato proprietario del feed 'MateraPulita'</h3>
 		<p>Nella lista dei feed 'Open Data' da aggiungere alla mappa, si trova anche un feed in XML proprietario, 'http://www.materapulita.it/app/segnalazioniopen.xml',
 		che richiede un plugin per essere letto correttamente dai MapTune. Il plugin deve essere definito con il nome 'maptune.feed.parse.MateraPulita()' in un file Javascript con il nome 'maptune.feed.parse.MateraPulita.js'. Poi può essere riferito nella configurazione del feed come parametro 'type':'MateraPulita', quindi con il nome del parser plugin.
 		</p>
@@ -169,9 +172,9 @@ categoryList: {
 </code></pre>
 		<p style="margin-bottom:10px;">Il plugin deve definiere il parser propriertario più o meno cosi: </p>
 <pre><code>
-window.ixmaps = window.ixmaps || {};
-ixmaps.feed = ixmaps.feed || {};
-ixmaps.feed.parse = ixmaps.feed.parse || {};
+window.maptune = window.maptune || {};
+maptune.feed = maptune.feed || {};
+maptune.feed.parse = maptune.feed.parse || {};
 (function() {
 
 /**
@@ -179,9 +182,9 @@ ixmaps.feed.parse = ixmaps.feed.parse || {};
  * @param the data object received from the feed
  * @param opt optional parameter object
  * @type object
- * @return an ixmaps layer object
+ * @return a maptune layer object
  */
-  ixmaps.feed.parse.<span style="color:#2244dd">MateraPulita</span> = function(data,opt){
+  maptune.feed.parse.<span style="color:#2244dd">MateraPulita</span> = function(data,opt){
     if ( opt.format == "json" ) {
         ...
 
@@ -206,7 +209,8 @@ ixmaps.feed.parse = ixmaps.feed.parse || {};
 </code></pre>
 		<p>Non aggiungo altro alla descrizione, ma per qualsiasi domanda sono a disposizione su:
 		guenter.richter@gmail.com</p>
-<a href="http://public.ixmaps.com.s3-website-eu-west-1.amazonaws.com/maptune/maptune_flat.html?param=Libera.js">test</a>
+		
+<a href=http://public.ixmaps.com.s3-website-eu-west-1.amazonaws.com/maptune/maptune_flat.html?param=BasilicataEventi.js" class="btn">online demo</a>
 <p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
 
       <footer class="site-footer">

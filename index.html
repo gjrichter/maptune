@@ -108,9 +108,12 @@ image:     'Link_immagine'
 		<p>definisce i campi della tabella in CSV dove si trovano: la posizione (lat,lon) dell'evento, la data di inizio e fine dell'evento, ed i campi da presentare nella lista o sulla mappa.</p> 
 <pre><code>
 parser: {
+...
 timeStart: 'Data inizio',
 timeEnd:   'Data fine',
 timeParse: function(value){var dateA = value.split(' ')[0].split('\/');return new Date(dateA[2],dateA[1]-1,dateA[0]);},
+...
+}
 </code></pre>
 		<p>con 'timeParse' si può definire una funzione in JavaScript, che legge il valore di 'timeStart' e 'timeEnd' e crea un oggetto Date() con la data definita.</p> </p> 
 		<p>l'oggetto 'layer':</p> 

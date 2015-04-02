@@ -154,8 +154,8 @@ categoryList: {
 </code></pre>
 		<p>definisce la rappresentazione categorizzata degli elementi sulla mappa</p>
 		<h3>parser plugin per 'MateraPulita'</h3>
-		<p>Nella lista dei sorgenti 'Open Data' da aggiungere alla mappa, si trova anche un feed in XML proprietario, 'http://www.materapulita.it/app/segnalazioniopen.xml',
-		che richiede un plugin per il parser di MapTune. Il plugin viene definito in un file Javascript con il nome 'map_feed.parse.MateraPulita.js' e riferito nella configurazione del feed come parametro 'type':'MateraPulita', quindi con lo stesso nome del parser plugin.
+		<p>Nella lista dei feed 'Open Data' da aggiungere alla mappa, si trova anche un feed in XML proprietario, 'http://www.materapulita.it/app/segnalazioniopen.xml',
+		che richiede un plugin per essere letto correttamente dai MapTune. Il plugin deve essere definito con il nome 'maptune.feed.parse.MateraPulita()' in un file Javascript con il nome 'maptune.feed.parse.MateraPulita.js'. Poi può essere riferito nella configurazione del feed come parametro 'type':'MateraPulita', quindi con il nome del parser plugin.
 		</p>
 <pre><code>
 ...

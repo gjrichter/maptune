@@ -48,7 +48,7 @@
 				  "markerImage" : "resources/icons/map-icons-collection/libera.png",
 				  "smallImage" : "resources/icons/default/default-small_orange.png",
 				  "markerImageType" : "png",
-				  "description": '<div id="infodiv" style="margin-top:-10px;color:#aaa;">Elenco #MUSEIDIGITALI collegato a <a href="http://www.piersoft.it/?p=269" target="_blank">questo POST</a> da <a href="http://www.twitter.com/piersoft" target="_blank">@Piersoft</a> | <a href="https://docs.google.com/spreadsheets/d/1bJghmIgxv9ayCV7K4iEAcHkUf6oEQ5eOBx9vOPZMJ8s/edit?usp=sharing" target="_blank">Elenco</a> | <a href="https://docs.google.com/spreadsheet/pub?key=0AoZ9HGSxyqvydDNiX2RlNkhfU01TbXBZRXdxcDVLRVE&output=html" target="_blank">DashBoard</a> | Pin CC BY-SA <a href="http://mapicons.nicolasmollet.com/">Mapicons</a></div>'
+				  "description": '<div id="infodiv" style="margin-top:-10px;color:#aaa;">Elenco Beni Confiscati tratto dal GeoBlog di Libera Piemonte; csv preparato da Cesare Gerbinio</a></div>'
 				},
 
 			flag:'zoomto'});

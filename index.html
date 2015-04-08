@@ -207,6 +207,71 @@ maptune.feed.parse = maptune.feed.parse || {};
 })();
 
 </code></pre>
+		<p>Maptune fornisce una implementazione della sua libreria Javascript con una pagina HTML reattiva, maptune_flat.html, che contiene 
+		gli elementi principali per l'applicazione: la mappa e la lista degli elementi mappati, un filtro testuale
+		un menu, tutto configurabile via un config file (.js)</p>
+<pre><code>
+path/maptune_flat?config=Libera.js
+</code></pre>
+<pre><code>
+	var MapParam = {
+		"default":
+			{
+			"thumbnailRoot" : "resources/images/tn/",
+			"markerImageRoot" : "resources/icons/map-icons-collection/numeric/orange",
+			"markerImageType" : "png"
+			}
+		,
+		"noItemText" : "<span style=\"color:#888\">lista vuota <br>"+
+					   "aggiungi un layer via <a href=\"javascript:openMegaBox(null,'feed-dialog',MapParam.layerdialog.href,'add layer','auto',500,400)\"><span style=\"font-weight:bold;border:solid #ddd 1px;padding:2px;\">&nbsp;+ add&nbsp;</span></a><br><br>"+
+					   "info <a href=\"javascript:openMegaBox(null,'feed-dialog','./about.html','about','auto',500,400)\"><span style=\"font-weight:bold;border:solid #ddd 1px;padding:2px;\">&nbsp;i&nbsp;</span></a></span>"
+		,
+		"layerdialog" :{"href":"all_feeds.html"}
+		,
+		"layerbar" :{"href":"Deputati_topbar.html"}
+		,
+		"layertab" :{"href":"all_feeds.html"}
+		,
+		"layers": []
+	};
+
+	__init = function(){
+		maptune.addFeedLayer('./data/collection.js',{
+			type:'data',
+			format:'json',
+			name:'Collection',
+			flag:'collapsed'});
+
+		maptune.addFeedLayer('./data/Libera-Piemonte-Geobeni-Gennaio-2013-draft_1.csv',{
+			type:'csv',
+			format:'csv',
+			name:'Libera-Piemonte',
+			title:'Libera-Piemonte',
+			proxy: 'true',
+			parser: 
+				{
+				info: 'Id|Storia originale|Oggi originale|Situazione attuale|Ubicazione|Percorso di assegnazione|Data e motivo del sequestro e della confisca|Descrizione del bene|Sottotipologia|Tipologia|Profilo intestatario|Email|Sito web|CAP|Indirizzo|URL Dettagli|URL Immagine ',
+				title: 'CAP',
+				lat:   'Lat',
+				lon:   'Lng',
+				image: 'URL Immagine',
+				label: 'false'
+				},
+			layer: 
+				{ "name": "Libera-Piemonte",
+				  "markerType" : "custom",
+				  "markerImage" : "resources/icons/map-icons-collection/libera.png",
+				  "smallImage" : "resources/icons/default/default-small_orange.png",
+				  "markerImageType" : "png",
+				  "description": '<div id="infodiv" style="margin-top:-10px;color:#aaa;">Elenco Beni Confiscati tratto dal GeoBlog di Libera Piemonte; csv preparato da Cesare Gerbinio</a></div>'
+				},
+
+			flag:'zoomto'});
+	}
+
+	setTimeout("__init()",2000);
+</code></pre>
+		
 		<p>Non aggiungo altro alla descrizione, ma per qualsiasi domanda sono a disposizione su:
 		guenter.richter@gmail.com</p>
 		

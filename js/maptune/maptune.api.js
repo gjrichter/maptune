@@ -32,6 +32,11 @@ var _TRACE = function(szMessage){
 
 var maptune = window.maptune = window.maptune || {};
 maptune.jsapi = maptune.jsapi || {};
+
+// we need also the ixmaps namespace to import ixmaps map layer files 
+var ixmaps = window.ixmaps = window.ixmaps || {};
+ixmaps.jsapi = ixmaps.jsapi || {};
+
 (function() {
 
 var fNoMap = false;
@@ -1149,7 +1154,7 @@ maptune.jsapi.__loadDataP = function(szLayer,szFilter,szFlag,szSource,szFallBack
         },"script").success(function() {})
 				  .fail(function() {})
 				  .error(function() {})
-	maptune.jsapi.import = function(data){
+	maptune.jsapi.import = ixmaps.jsapi.import = function(data){
 		maptune.message("loading",false,"x34");
 		var obj = false;
 		if ( typeof(data) == "object" ){

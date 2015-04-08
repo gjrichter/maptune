@@ -173,7 +173,9 @@ Mapstraction: {
     },
 
     addImageOverlay: function(id, src, opacity, west, south, east, north) {
-        throw 'Not implemented';
+        var map = this.maps[this.api];
+        var newBounds = new L.LatLngBounds(new L.LatLng(south,west), new L.LatLng(north,east));
+		L.imageOverlay(src, newBounds,{"opacity":opacity}).addTo(map);
     },
 
     setImagePosition: function(id, oContext) {

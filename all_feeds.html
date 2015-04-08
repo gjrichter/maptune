@@ -159,6 +159,10 @@
 						title:'MateraPulita'
 						});" >MateraPulita (kml)</a>,
 					<span class="description">rappresentazione come definita dal kml</span>
+
+
+
+
 					<a href="javascript:maptune.addFeedLayer('http://www.materapulita.it/app/segnalazioniopen.xml',{
 						type:'MateraPulita',
 						format:'xml',
@@ -442,18 +446,6 @@ v						parser:{
 								markerImageType : 'png'}});" >Parafarmacie</a>
 					<span class="description"></span>
 				</li><li>
-					<a class="touch" href="javascript:maptune.addFeedLayer('http://opendatasalutedata.cloudapp.net/v1/datacatalog/AziendeSanitarieLocali/?$filter=&format=kml ',{
-						type:'kml',
-						format:'xml',
-						flag:'closed|noinfo|zoomto',
-						title:'ASL',
-						layer:{	name:'ASL',
-								markerType:'custom',
-								markerImage : 'resources/icons/google/red-circle.png',
-								smallImage : 'resources/icons/google/red-circle.png',
-								markerImageType : 'png'}});" >ASL</a>
-					<span class="description"></span>
-				</li><li>
 					<a href="javascript:maptune.addFeedLayer('http://opendatasalutedata.cloudapp.net/v1/datacatalog/Distributori/?$filter=&format=kml
 					',{
 						type:'kml',
@@ -503,7 +495,7 @@ v						parser:{
 
 				</li><li>
 
-					<a class="touch" href="javascript:maptune.addFeedLayer('http://maps.maptune.com/assets/maps/layer/jsonp/siti_italiani_unesco.js',
+					<a class="touch" href="javascript:maptune.addFeedLayer('http://maps.ixmaps.com/assets/maps/layer/jsonp/siti_italiani_unesco.js',
 						{type:'data',
 						 format:'json',
 						 name:'Siti Italiani nel Patrimonio Mondiale del UNESCO',
@@ -571,9 +563,25 @@ v						parser:{
 						});" >
 					Earthquakes worldwide - last week<span style="font-size:8px;"></span></a>
 					<br><span class="description">da USGS - formato: GeoJson</span>
+				</li><li>
+					<a class="touch" href="javascript:maptune.addFeedLayer('http://maps.ixmaps.com/assets/maps/layer/jsonp/seismic_hazard.js.gz',
+						{type:'data',
+						 format:'json',
+						 name:'seismic_hazard'
+						 });" >
+						Seismic Hazard<span style="font-size:8px;"> (4 Mb)</span></a>
+					<br><span class="description">formato originale: shapefile --> trasformato: GeoJSON</span>
+				</li><li>
+					<a class="touch" href="javascript:maptune.addFeedLayer('http://maps.ixmaps.com/assets/maps/layer/jsonp/tolentino.js.gz',
+						{type:'data',
+						 format:'json',
+						 name:'Edifici',
+						 flag:'zoomto|checklayer'
+						 });" >
+						Tolentino open data</a>
+					<br><span class="description">formato originale: shapefile --> trasformato: GeoJSON</span>
 				</li></ul>
 				</div>
-
 				<h3>
 					Open Data - Washington DC 
 				</h3> 

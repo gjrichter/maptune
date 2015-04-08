@@ -24,6 +24,16 @@
 		,
 		"layer" :{"href":"BasilicataEventi_layer.html"}
 		,
+		"filter": {  "Musica":"Musica"
+					,"Teatro":"Teatro"
+					,"Danza":"Danza"
+					,"Danza":"Danza"
+					,"Cinema":"Cinema"
+					,"Danza":"Danza"
+					,"Sport":"Sport"
+					,"Cultura":"cinema|musei|museo|arte|mostre|fotografia"
+					}
+		,
 		"layers": []
 
 	};

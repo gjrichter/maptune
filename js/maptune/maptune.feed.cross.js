@@ -16,7 +16,7 @@ $Log:maptune.feed.cross.js,v $
 /** 
  * @fileoverview This file is a plugin for maptune.jsapi top import cross domain feeds
  *
- * @author Guenter Richter guenter.richter@maptune.com
+ * @author Guenter Richter guenter.richter@ixmaps.com
  * @version 0.9
  */
 
@@ -94,16 +94,15 @@ var debug = false;
 
 						// undo proxy (YQL) wrapping
 						// -------------------------
-						if ( (opt.proxy == "yql") && data.query.results ){
+						if ( (opt.proxy == "yql") && data.query && data.query.results ){
 							if ( opt.format == "json" && data.query.results ){
 								data = 	maptune.feed.unwrapYQLjson(data.query.results);
 							}
 							if ( opt.format == "xml" ){
 							}
 							opt.proxy = false;
-
-							callback(maptune.feed.processFeed(data,opt));
 						}
+						callback(maptune.feed.processFeed(data,opt));
 					 },
 					 error: function(data) {
 						maptune.message("loading",false,"x5");

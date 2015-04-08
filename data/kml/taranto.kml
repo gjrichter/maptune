@@ -1,0 +1,903 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name>Untitled layer</name>
+		<Placemark>
+			<styleUrl>#icon-ci-1</styleUrl>
+			<name>Nuova base navale</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Località Chiapparo]]></description>
+			<Point>
+				<coordinates>17.249221,40.440938,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-ci-1</styleUrl>
+			<name>Stazione Torpediniere</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[E' la vecchia base navale. Sorge nel Mar Piccolo.]]></description>
+			<Point>
+				<coordinates>17.242526,40.475158,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-ci-1</styleUrl>
+			<name>Arsenale Militare</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[L'impatto inquinante dell'Arsenale Militare è stato notevole nel corso degli anni, ad esempio per quanto riguarda l'amianto (http://www.lagazzettadelmezzogiorno.it/GdM_traduci_notizia.php?IDNotizia=150078&IDCategotia=11).]]></description>
+			<Point>
+				<coordinates>17.256087,40.470979,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#poly-3333FF-3-115</styleUrl>
+			<name>Area inquinata di fronte alla Stazione Torpediniere e all'Arsenale</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[In corrispondenza con questa area del Mar Piccolo, che è stata zona di attracco delle navi della Marina Militare, è stata riscontrata una forte presenza di inquinanti.]]></description>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<tessellate>1</tessellate>
+						<coordinates>17.238063999999998,40.476334,0.0 17.259007,40.477116,0.0 17.259176999999998,40.481686999999994,0.0 17.237891,40.480511,0.0 17.238063999999998,40.476334,0.0</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-ci-1</styleUrl>
+			<name>Antenna militare per telecomunicazioni</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Qui sorge un'antenna (http://www.resistenze.org/sito/os/ip/osip2i25.htm) molto alta. Taranto è collegata al sistema C4i della US Navy (http://www.peacelink.it/disarmo/a/3448.html).]]></description>
+			<Point>
+				<coordinates>17.157039,40.450082,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-ci-1</styleUrl>
+			<name>Flotta Marina Militare</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[La portaerei Garibaldi è collegata al sistema C4i (http://lists.peacelink.it/armamenti/msg00404.html). Qui attracca anche l'altra portaerei, più nuova: la Cavour (http://www.internazionale.it/news/italia/2014/04/08/il-viaggio-promozionale-della-portaerei-cavour/).]]></description>
+			<Point>
+				<coordinates>17.249179,40.443159,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Sito per il rigassificatore</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Il progetto rigassificatore risale al 2006. E' stato appoggiato da diverse forze politiche, ma criticato dalle associazioni ambientaliste per il rischio di incidenti rilevanti (si veda l'eccessiva vicinanza rispetto all'area industriale, solo 775 dai serbatoi ENI). E' stato bocciato nella VIA (valutazione impatto ambientale). Nel 2014 è rispuntato questo progetto nell'ipotesi di fornire metano all'ILVA per arginare le emissioni più inquinanti e attivare la lavorazione dei pallets di "ferro preridotto".]]></description>
+			<Point>
+				<coordinates>17.176223,40.490892,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Cisterne dell'Agip</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[La cisterna più vicina sorge a 775 metri dal sito prescelto per il rigassificatore. In questa area il 1° maggio 2006 sono fuoriusciti circa 35 milioni di litri di carburante per un incidente. Nel 2007  stato proposto il raddoppio delle capacità di raffinazione e stoccaggio dell'Agip.]]></description>
+			<Point>
+				<coordinates>17.185148,40.48655,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-33</styleUrl>
+			<name>Ilva</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[A Taranto nel 2007 è stato stimata l'emissione del 90% di tutta la diossina italiana inventariata nel database Ines e l'emissione del 62% del mercurio in mare.<br>Questi dati, diffusi da PeaceLink, sono stati al centro di fortissime polemiche, ma si basavano sui dati del registro Ines (http://www.eper.sinanet.apat.it/site/it-IT/) 2005.<br>L'ILVA dopo l'AIA del 2012 non è riusciata a rispettare le prescrizioni (http://www.isprambiente.gov.it/it/garante_aia_ilva/aia-e-controlli/tabella-riassuntiva-delle-prescrizioni-aia/ILVAtabellaprescrizioniriesamefinale.pdf) e quindi è in corso una procedura di infrazione europea (http://www.ecodallecitta.it/notizie.php?id=378878).]]></description>
+			<Point>
+				<coordinates>17.214375,40.494547,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-ci-1</styleUrl>
+			<name>Porto civile commerciale</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.156181,40.501986,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Porto civile collegato all'area industriale</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Qui avviene lo scarico del materiale necessario alla produzione dell'Ilva. Lo scarico senza adeguate precauzioni ha provocato un grave inquinamento. Tanto che le barche del porticciolo turistico vengono danneggiate dalla polvere di ferro che sporca e macchia.]]></description>
+			<Point>
+				<coordinates>17.215060000000005,40.47679,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Porticciolo turistico</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[L'inquinamento - oltre che nuocere alla salute - nuoce anche alle barche che vengono "macchiate" dal minerale. La cosa ha generato lamentele.]]></description>
+			<Point>
+				<coordinates>17.22536,40.477933,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Quartiere Tamburi</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[E' fortemente inquinato dall'Ilva. In questo punto le case distano 150 metri dal muro di cinta dell'ILVA. Il quartiere esisteva già prima dell'insediamento dell'acciaieria (nel 1960 venne avviata la costruzione dell'allora Italsider). Questa zona è così inquinata che l'ex ministro Clini ipotizzava un'evacuazione della popolazione (http://www.ilfattoquotidiano.it/2012/12/09/ilva-taranto-clini-evacuazione-del-quartiere-tamburi-e-possibilita/440778/).]]></description>
+			<Point>
+				<coordinates>17.223344,40.495559,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-61</styleUrl>
+			<name>Isola di San Paolo</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Qui c'è un forte napoleonico di grande valore storico. E' inaccessibile al pubblico perché è zona militare.]]></description>
+			<Point>
+				<coordinates>17.176436,40.438586,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-ci-1</styleUrl>
+			<name>Zona di attracco di navi Usa</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[In passato le navi americane, come la nave ammiraglia della VI Flotta, hanno ormeggiato in questa zona.]]></description>
+			<Point>
+				<coordinates>17.200469,40.477901,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-ci-1</styleUrl>
+			<name>Deposito Nato NAMSA</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.292888,40.468156,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-ci-1</styleUrl>
+			<name>Buffoluto M.M.</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Deposito munizioni della Marina Militare.]]></description>
+			<Point>
+				<coordinates>17.275658,40.49121,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-ci-1</styleUrl>
+			<name>Base Aeronautica Militare</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.279799,40.470261,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-ci-1</styleUrl>
+			<name>Stazione sottomarini M.M.</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.255809,40.475371,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-ci-1</styleUrl>
+			<name>Scuola addestramento Marina Militare</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.216895,40.416027,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Campo di calcio </name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Campo di calcio "Tamburi Vecchio", chiuso nel 2000 dall'amministrazione Di Bello perché pieno di poveri provenienti dal vicino parco minerali.]]></description>
+			<Point>
+				<coordinates>17.222559,40.495012,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Parco minerali</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Minerale di ferro. Proviene in buona parte dall'Amazzonia. Viene utilizzato per il processo di sinterizzazione e in tale processo si forma la diossina.]]></description>
+			<Point>
+				<coordinates>17.221842,40.496668,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[In questa zona sono installate le batterie della cokeria ILVA. Sono dieci e sono così numerate: 3-4-5-6-7-8-9-10-11-12. La 1 e la 2 sono state chiuse da tempo perché vetuste (ma non sono mai state demolite. Le più vecchie sono la 3-4-5-6. La più nuova è la 12 (del 2000). <br>Per molto tempo i lavoratori in cokeria hanno vissuto in condizioni degradanti  (http://www.tarantosociale.org/tarantosociale/gallery/g56_i4513.html)e per questo la magistratura in passato ha avviato un processo.]]></description>
+			<Point>
+				<coordinates>17.21548,40.501751000000006,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Fossile per la cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[E' la zona del parco minerali (che è scoperto ed eroso dal vento) più vicina alla cokeria. Qui viene stoccata la polvere di carbone destinata alla cokefazione.]]></description>
+			<Point>
+				<coordinates>17.220039,40.499932,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Targa della "maledizione"</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Qui fu messa nel 2001 la targa  (http://www.peacelink.it/ecologia/images/18328_a38793.jpg)in cui i cittadini del quartiere Tamburi stanchi dell'inquinamento "maledicono" i politici che potrebbero fare e non fanno.]]></description>
+			<Point>
+				<coordinates>17.224261,40.495236,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Area verde contaminata</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Questa è una delle aree verdi contaminate che dovrebbero essere bonificate. E' stata recintata per evitare che i bambini vadano a giocare (http://www.inchiostroverde.it/news/non-giocate-con-la-terra-incontro-di-informazione-sulle-aree-contaminate-dei-tamburi.html) e si contaminino. Nonostante sia contaminata, nessuna autorità amministrativa ha dichiarato quale sia la fonte della contaminazione.]]></description>
+			<Point>
+				<coordinates>17.223558,40.495554,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Casa di Peppino Corisi</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[In questa casa ha vissuto Peppino Corisi, animatore delle lotte per la salute nel quartiere Tamburi. Peppino Corisi ha chiesto alle sue figlie, prima di morire di cancro, di attaccare una targa alla finestra della sua casa (http://www.ecoblog.it/post/23447/morire-di-cancro-ai-polmoni-a-taranto-la-storia-di-peppino-corisi-ennesima-vittima-invisibile) in via De Vincentis: <br>"Ennesimo decesso per neoplasia polmonare".]]></description>
+			<Point>
+				<coordinates>17.224041,40.495379,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#poly-FF0000-3-115</styleUrl>
+			<name>Area con fondale fortemente contaminato: qui ci sono le "cozze alla diossina"</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Primo seno del Mar Piccolo. In questa zona è vietata la coltivazione dei mitili. E' stata rilevata un'elevata contaminazione da diossina e PCB. La presenza della diossina nelle cozze fu denunciata nel 2011 dal Fondo Antidiossina e da PeaceLink. (http://www.peacelink.it/peacelink/a/33112.html)]]></description>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<tessellate>1</tessellate>
+						<coordinates>17.23632,40.487824,0.0 17.234458999999998,40.484429,0.0 17.239754000000005,40.482601,0.0 17.265015,40.484821,0.0 17.262611000000003,40.488737,0.0 17.263641,40.495004,0.0 17.257462,40.499311,0.0 17.243042,40.49409,0.0 17.23632,40.487824,0.0</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Primo seno del Mar Piccolo</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Era la zona del Mar Piccolo dove si coltivavamo le cozze più pregiate. Ora per la contaminazione da diossina e PCB è interdetta ogni attività di questo tipo e la mitilicoltura è consentita solo nel Mar Grande e nel secondo seno del Mar Piccolo.]]></description>
+			<Point>
+				<coordinates>17.232678,40.478358,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Idrovora dell'ILVA</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Qui è installata una potente idrovora che preleva acqua per il raffreddamento degli impianti dell'ILVA. Secondo la Procura della Repubblica - che ha utilizzato studi basati su modelli matematici - sarebbe così potente da risucchiare l'acqua anche del mar Grande, creando un flusso circolare che farebbe entrare nel Mar Piccolo l'acqua degli scarichi dell'ILVA nel Mar Grande. Secondo la Procura questo spiegherebbe in buona parte la contaminazione da diossina e PCB (vedere area rossa del primo seno del Mar Piccolo).]]></description>
+			<Point>
+				<coordinates>17.237699,40.491006000000006,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Ponte di Pietra</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Secondo la Procura della Repubblica - che ha utilizzato studi basati su modelli matematici - l'acqua del mar Grande entra nel Mar Piccolo facendo arrivare la diossina e gli altri inquinanti riscontrati negli scarichi dell'ILVA (situati nel Mar Grande). Secondo la Procura questo spiegherebbe in buona parte la contaminazione da diossina e PCB (vedere area rossa del primo seno del Mar Piccolo).]]></description>
+			<Point>
+				<coordinates>17.227442,40.480006,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Ponte Girevole</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Secondo la Procura della Repubblica - che ha utilizzato studi basati su modelli matematici - l'acqua del mar Grande entra nel Mar Piccolo facendo arrivare la diossina e gli altri inquinanti riscontrati negli scarichi dell'ILVA (situati nel Mar Grande). Secondo la Procura questo spiegherebbe in buona parte la contaminazione da diossina e PCB (vedere area rossa del primo seno del Mar Piccolo).]]></description>
+			<Point>
+				<coordinates>17.235961,40.47444,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Deposito carburanti Aeronautica Militare</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Qui arrivano via mare i rifornimenti del deposito. E' il più grande deposito carburanti dell'Italia meridionale per l'Aeronautica Militare. Periodicamente un'imbarcazione rifornisce il deposito con rischi di inquinamento del Mar Piccolo in casi di avaria o incidente.]]></description>
+			<Point>
+				<coordinates>17.307715,40.478912,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Secondo seno del Mar Piccolo</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Qui la presenza di diossina è inferiore rispetto al primo seno del Mar Piccolo (a ovest). Qui è consentita la coltivazione delle cozze.<br><br>Nel primo seno è ubicata l'idrovora ILVA.]]></description>
+			<Point>
+				<coordinates>17.29085,40.483254,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-61</styleUrl>
+			<name>Oasi naturale WWF</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Oasi Palude La Vela (http://www.wwftaranto.it/palude-la-vela-oasi.html), gestita dal WWF di Taranto.]]></description>
+			<Point>
+				<coordinates>17.323637,40.479206,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>ILVA, area a freddo</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[In questa zona vi sono gli impianto dell'"area a freddo" dell'ILVA che sono meno inquinanti di quelli dell'area a caldo. Come si può notare lo stabilimento è stato costruito al contrario, posizionando gli impianti più inquinanti più vicini al centro abitato e quelli meno inquinanti invece più lontani. Da notare: lo stabilimento è stato costruito dopo il quartiere Tamburi ed è stato posizionato a ridosso delle case. L'ex ministro Clini dunque sbagliava a dire che il quartiere era stato costruito a ridosso della fabbrica.]]></description>
+			<Point>
+				<coordinates>17.196221,40.513212,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Emissioni di diossina dal camino E312</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Qui sorge il camino E-312 e da qui fuoriesce la diossina (https://www.youtube.com/watch?v=EJQ4Yos1eLo). E' il camino dell'impianto di sinterizzazione (detto anche "agglomerazione") in cui viene "sinterizzato" il minerale di ferro.]]></description>
+			<Point>
+				<coordinates>17.22122,40.509868,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Discarica ILVA Mater Gratiae</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Al centro di moltissime polemiche e dell'azione della magistratura che ha portato all'arresto nel 2013 del presidente della Provincia Gianni Florido (http://bari.repubblica.it/cronaca/2013/05/15/news/ilva_arresti-58817036/) (PD).<br>Vicino alla Mater Graztiae vengono coltivati cavolfiori.]]></description>
+			<Point>
+				<coordinates>17.199397,40.528202,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Canali scarico ILVA</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Area fortemente inquinata. Il Fondo Antidiossina ha realizzato filmati e segnalato il tutto alla Procura (http://www.peacelink.it/ecologia/a/36516.html).<br>Nei canali di scarico è stata trovata diossina. Secondo la Procura la diossina arriverebbe nel Mar Piccolo. Legamjonici ha informato di questo la Commissione Europea.  (http://www.inchiostroverde.it/news/ilva-la-commissione-europea-indaga-anche-su-inquinamento-mar-piccolo.html)]]></description>
+			<Point>
+				<coordinates>17.173176,40.491903,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#poly-FF0000-3-115</styleUrl>
+			<name>Area inquinata interdetta alla pesca</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Pur essendo interdetta alla pesca questa area è popolata di pesci che poi vanno altrove e vengono - con ogni probabilità - pescati.]]></description>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<tessellate>1</tessellate>
+						<coordinates>17.145167999999998,40.487301,0.0 17.160446,40.47098,0.0 17.179499999999997,40.482471,0.0 17.164051,40.497092,0.0 17.145167999999998,40.487301,0.0</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Diossina nel latte di mucca</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[A Massafra è stata trovata diossina (http://bari.repubblica.it/cronaca/2014/04/05/news/diossina-82802964/) nel latte di mucca.]]></description>
+			<Point>
+				<coordinates>17.131462,40.587364,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Pecore e capre con diossina</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[In questa zona hanno pascolato le pecore e le capre che si sono contaminate dalla diossina (http://video.sky.it/news/cronaca/taranto_1600_pecore_da_abbattere_per_la_diossina_dellilva/v19923.vid). <br>Per 20 chilometri dall'ILVA si estende il raggio del divieto di pascolo in aree incolte.]]></description>
+			<Point>
+				<coordinates>17.246604,40.52635900000001,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#poly-3333FF-3-115</styleUrl>
+			<name>Zona inquinata da sversamenti di idrocarburi</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Qui un tempo si faceva il bagno. Oggi è zona non balneabile.]]></description>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<tessellate>1</tessellate>
+						<coordinates>17.229308999999997,40.424474,0.0 17.244244,40.436757,0.0 17.238407,40.440807,0.0 17.223643999999997,40.428786,0.0 17.229308999999997,40.424474,0.0</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#line-FF0000-5</styleUrl>
+			<name>Raggio di contaminazione delle diossina: divieto di pascolo</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Terreno contaminato da diossina, la Regione Puglia ha vietato il pascolo libero in aree incolte per via della presenza di diossina. Il raggio parte dall'area industriale.]]></description>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>17.214493,40.51406,0.0 17.216209000000003,40.694175,0.0 17.216552,40.694175,0.0 17.216552,40.693915,0.0</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#line-FF0000-5</styleUrl>
+			<name>Divieto di pascolo per diossina</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Diossina nel terreno. La Regione Puglia ha vietato il pascolo libere in aree incolte per un raggio di 20 chilometri.]]></description>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>17.427642,40.616559,0.0 17.22476,40.513864,0.0</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Diossina nel raggio di 20 chilometri</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Diossina nel terreno. La Regione Puglia ha vietato il pascolo libere in aree incolte per un raggio di 20 chilometri.]]></description>
+			<Point>
+				<coordinates>17.029495,40.649387,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Diossina nel raggio di 20 chilomentri</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Diossina nel terreno. La Regione Puglia ha vietato il pascolo libere in aree incolte per un raggio di 20 chilometri.]]></description>
+			<Point>
+				<coordinates>17.21489,40.699902,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Diossina nel raggio di 20 chilometri</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Diossina nel terreno. La Regione Puglia ha vietato il pascolo libere in aree incolte per un raggio di 20 chilometri.]]></description>
+			<Point>
+				<coordinates>17.43187,40.619165,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#line-FF0000-5</styleUrl>
+			<name>Diossina nel raggio di 20 chilometri</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Diossina nel terreno. La Regione Puglia ha vietato il pascolo libere in aree incolte per un raggio di 20 chilometri.]]></description>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>17.194870000000005,40.513277,0.0 17.034194,40.649387,0.0</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Eni, raffineria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Notevole è l'impatto della raffineria ENI, i cui macroinquinanti (http://www.peacelink.it/ecologia/a/40316.html) sono riassunti in questa scheda.<br>La raffineria, come l'ILVA, è uno stabilimento con impianti sottoposti alla Direttiva Seveso sui rischi di incidente rilevante. Recentemente ha suscitato notevole allarme la decisione di costruire un sito di stoccaggio (Progetto Tempa Rossa (http://savemargrande.wordpress.com/)).]]></description>
+			<Point>
+				<coordinates>17.19429,40.493111,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Scarico in acqua della raffineria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[E' caratterizzato da un odore pungente, fortissimo.]]></description>
+			<Point>
+				<coordinates>17.181587,40.492034,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Progetto Tempa Rossa</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[E' previsto un incremento del traffico di petroliere (http://www.peacelink.it/ecologia/a/40314.html). Contro il progetto è nato un movimento cittadino (http://savemargrande.wordpress.com/).]]></description>
+			<Point>
+				<coordinates>17.194805,40.470066,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-123</styleUrl>
+			<name>Cementir</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Cementificio (http://www.cementiritalia.it/cementir/index.php?option=com_content&view=article&id=96&Itemid=59). Ha avuto un discreto impatto inquinante in passato per le polveri.]]></description>
+			<Point>
+				<coordinates>17.165301,40.509036,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Batteria 1 cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Dismessa, non più funzionante da molto tempo.]]></description>
+			<Point>
+				<coordinates>17.210609,40.498777,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Batteria 2 cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Dismessa, non più funzionante da molto tempo.]]></description>
+			<Point>
+				<coordinates>17.211381,40.499144,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Camino cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Asservito alle batterie 1 e 2. Non più funzionante.]]></description>
+			<Point>
+				<coordinates>17.211328,40.498683,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Camino cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.213066,40.499597,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Batteria 3</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Spenta nel 2013]]></description>
+			<Point>
+				<coordinates>17.212411,40.499699,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Batteria 4 cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Spenta dal 2013]]></description>
+			<Point>
+				<coordinates>17.213031,40.500038,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Batteria 5 cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Spenta nel 2013]]></description>
+			<Point>
+				<coordinates>17.214128,40.500613,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Batteria 6 cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.214761,40.500935,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Camino cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.214702,40.500531,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Batteria 7 cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[E' attiva.]]></description>
+			<Point>
+				<coordinates>17.21666,40.501959,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Batteria 8 cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[E' attiva.]]></description>
+			<Point>
+				<coordinates>17.217336,40.50233,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Camino cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.217234,40.501885,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Bateria 9 cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.218709,40.503072,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Batteria 10 cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.219481000000002,40.50348000000001,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Camino cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.219321,40.502983,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Batteria 11 cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[E' attiva.]]></description>
+			<Point>
+				<coordinates>17.216874,40.502901,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Batteria 12 cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[E' attiva.]]></description>
+			<Point>
+				<coordinates>17.218108,40.503541,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Camino cokeria</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.217459,40.502868,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-619</styleUrl>
+			<name>Gasometro</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Lo scoppio di un gasometro con conseguente incendio provocherebbe un disastro di vaste proporzioni.]]></description>
+			<Point>
+				<coordinates>17.211113,40.504924,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Rifacimento carri siluro</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.210019,40.503758,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Reparto MAN/REF</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.208404,40.504076,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>ACC/1</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Acciaieria 1]]></description>
+			<Point>
+				<coordinates>17.207095,40.50404700000001,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>CCO/1</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Colata continua in cui si sono verificati alcuni incidenti. (http://www.inchiostroverde.it/ilva-cosa-succede-nellacciaieria-1-secondo-incidente-in-pochi-giorni/)]]></description>
+			<Point>
+				<coordinates>17.206478,40.502142,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Officina generale</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.206092,40.512592,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Treno nastri 1</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.203431,40.511646,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>Decappaggio</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>17.201371,40.511246,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-167</styleUrl>
+			<name>LAF</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Laminatoio a freddo]]></description>
+			<Point>
+				<coordinates>17.199644,40.509093,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Style id='icon-123'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/123-red-dot.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+		</Style>
+		<Style id='icon-167'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/167-red-pushpin.png</href>
+				</Icon>
+				<hotSpot x='10' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+		</Style>
+		<Style id='icon-22'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+		</Style>
+		<Style id='icon-33'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/33-caution.png</href>
+				</Icon>
+			</IconStyle>
+		</Style>
+		<Style id='icon-61'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/61-green-dot.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+		</Style>
+		<Style id='icon-619'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/619-volcano_small.png</href>
+				</Icon>
+			</IconStyle>
+		</Style>
+		<Style id='icon-ci-1'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>images/icon-1.png</href>
+				</Icon>
+			</IconStyle>
+		</Style>
+		<Style id='line-FF0000-5'>
+			<LineStyle>
+				<color>ff0000FF</color>
+				<width>5</width>
+			</LineStyle>
+		</Style>
+		<Style id='poly-3333FF-3-115'>
+			<LineStyle>
+				<color>ffFF3333</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>73FF3333</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+		</Style>
+		<Style id='poly-FF0000-3-115'>
+			<LineStyle>
+				<color>ff0000FF</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>730000FF</color>
+				<fill>1</fill>
+				<outline>1</outline>
+			</PolyStyle>
+		</Style>
+	</Document>
+</kml>

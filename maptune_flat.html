@@ -122,13 +122,15 @@
 				</form>  
 				<div class="input-group-btn">
 					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-					<ul class="dropdown-menu dropdown-menu-right" role="menu">
+					<ul class="dropdown-menu dropdown-menu-right" role="menu" id="filter-preset-1">
+					  <!--	
 					  <li><a href="javascript:maptune.jsapi.setSearchFilter('Musica')">Musica</a></li>
 					  <li><a href="javascript:maptune.jsapi.setSearchFilter('Teatro')">Teatro</a></li>
 					  <li><a href="javascript:maptune.jsapi.setSearchFilter('Danza')">Danza</a></li>
 					  <li><a href="javascript:maptune.jsapi.setSearchFilter('Cinema')">Cinema</a></li>
 					  <li><a href="javascript:maptune.jsapi.setSearchFilter('Sport')">Sport</a></li>
 					  <li><a href="javascript:maptune.jsapi.setSearchFilter('cinema|musei|museo|arte|mostre|fotografia')">Cultura</a></li>
+					  -->
 					  <li><a href="javascript:maptune.jsapi.setSearchFilter('')">tutto</a></li>
 					</ul>
 				</div><!-- /btn-group -->
@@ -157,14 +159,16 @@
 						</form>  
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-							<ul class="dropdown-menu dropdown-menu-right" role="menu">
+							<ul class="dropdown-menu dropdown-menu-right" role="menu" id="filter-preset-2">
+							<!--	
 							  <li><a href="javascript:maptune.jsapi.setSearchFilter('Musica')">Musica</a></li>
 							  <li><a href="javascript:maptune.jsapi.setSearchFilter('Teatro')">Teatro</a></li>
 							  <li><a href="javascript:maptune.jsapi.setSearchFilter('Danza')">Danza</a></li>
 							  <li><a href="javascript:maptune.jsapi.setSearchFilter('Cinema')">Cinema</a></li>
 							  <li><a href="javascript:maptune.jsapi.setSearchFilter('Sport')">Sport</a></li>
 							  <li><a href="javascript:maptune.jsapi.setSearchFilter('cinema|musei|museo|arte|mostre|fotografia')">Cultura</a></li>
-							  <li><a href="javascript:maptune.jsapi.setSearchFilter('')">tutto</a></li>
+							-->
+							  <li><a href="javascript:maptune.jsapi.setSearchFilter('')">clear</a></li>
 							</ul>
 						</div><!-- /btn-group -->
 					</div><!-- /input-group -->
@@ -601,6 +605,16 @@
 				if ( MapParam.layertab && MapParam.layertab.href ){
 					infuseHTML('layer',MapParam.layertab.href,'layertab');
 				}
+				if ( MapParam.filter ){
+					var szFilter = "";
+					for ( f in MapParam.filter ){
+					  szFilter += "<li><a href=\"javascript:maptune.jsapi.setSearchFilter('"+MapParam.filter[f]+"')\">"+f+"</a></li>"					
+					}
+					szFilter += "<li><a href=\"javascript:maptune.jsapi.setSearchFilter('')\">clear</a></li>"					
+					$("#filter-preset-1").html(szFilter);
+					$("#filter-preset-2").html(szFilter);
+				}
+
 				/**
 				if ( MapParam.layerbar && MapParam.layerbar.href ){
 					infuseHTML('header_quickfilter',MapParam.layerbar.href,'layerbar');

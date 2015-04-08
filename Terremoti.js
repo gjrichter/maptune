@@ -16,13 +16,13 @@
 		"noItemText" : "<span style=\"color:#888\">lista vuota <br>"+
 					   "aggiungi un layer via <a href='javascript:$(\"#add-pill\").click()'><span style=\"font-weight:bold;border:solid #ddd 1px;padding:2px;\">&nbsp;+ add&nbsp;</span></a><br><br>"
 		,
-		"layerdialog" :{"href":"All_layer_sidebar.html"}
+		"layerdialog" :{"href":"all_feeds.html"}
 		,
 		"layerbar" :{"href":"BasilicataEventi_topbar.html"}
 		,
-		"layertab" :{"href":"All_layer_sidebar.html"}
+		"layertab" :{"href":"all_feeds.html"}
 		,
-		"layer" :{"href":"BasilicataEventi_layer.html"}
+		"layer" :{"href":"all_feeds.html"}
 		,
 		"layers": []
 

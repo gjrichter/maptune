@@ -16,7 +16,7 @@ $Log:maptune.feed.js,v $
 /** 
  * @fileoverview This file is a plugin for maptune.jsapi top import arbitrari georeferenced feeds
  *
- * @author Guenter Richter guenter.richter@maptune.com
+ * @author Guenter Richter guenter.richter@ixmaps.com
  * @version 0.9
  */
 

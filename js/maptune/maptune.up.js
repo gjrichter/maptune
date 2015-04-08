@@ -3351,7 +3351,7 @@ MapUp.prototype.isMarkerInMapBounds = function(map, marker, g) {
  */
 MapUp.prototype.isBoxInMapBounds = function(map, bBox) {
 
-	if ( !this.actualMapBounds ){
+	if ( !this.actualMapBounds || !bBox ){
 		return false;
 	}
 	// 1. check, if map zoom is belob bBox extent, if yes, return false

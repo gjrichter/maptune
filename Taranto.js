@@ -50,7 +50,8 @@
 
 			var imageUrl = './images/test14.svgz',
 			var imageBounds = [[40.42721820345035,17.179012299098115],[40.5055768053854,17.324237822972197]];
-			maptune.mapUp.map.addImageOverlay(imageUrl, imageBounds, 0.8 );
+			var opacity = 0.8;
+			maptune.mapUp.map.addImageOverlay(imageUrl, imageBounds, opacity );
 
 	}
 

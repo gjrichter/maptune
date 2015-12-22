@@ -135,7 +135,7 @@ $Log:OpenPuglia_Luoghi_della_Cultura.js,v $
 						  },
 				  'markerImageType' : 'png',
 				  'markerCluster' : 'false',
-				  'description': '<div id="infodiv" style="margin-top:-20px;margin-bottom:-10px;padding-bottom:10px;color:#444;">Layer collegato (offline) a <a href="https://docs.google.com/spreadsheets/d/12Vx_dXVpQ4ErSPVWNt54bFCSPJK-dsAyIVvnpbh-Bv4/edit?usp=sharing" target="_blank"><b>https://docs.google.com/spreadsheets/d/12Vx_dXVpQ4ErSPVWNt54bFCSPJK-dsAyIVvnpbh-Bv4/edit?usp=sharing</b></a><br>posizioni da latitudine/longitudine</div>',
+				  'description': '<div id="infodiv" style="margin-top:-20px;margin-bottom:-10px;padding-bottom:10px;color:#444;">Layer collegato (-offline) a <a href="https://docs.google.com/spreadsheets/d/12Vx_dXVpQ4ErSPVWNt54bFCSPJK-dsAyIVvnpbh-Bv4/edit?usp=sharing" target="_blank"><b>https://docs.google.com/spreadsheets/d/12Vx_dXVpQ4ErSPVWNt54bFCSPJK-dsAyIVvnpbh-Bv4/edit?usp=sharing</b></a><br>posizioni da latitudine/longitudine</div>',
 				},
 			flag:'open',
 			maxLargeIcons: 3});
